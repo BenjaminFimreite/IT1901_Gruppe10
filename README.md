@@ -2,14 +2,15 @@
 
 Hei alle sammen :-)
 
-testApp nåes via localhost:8000/testApp, Den viser en HTML-side og bruker statisk CSS fil.
-	<br />
+testApp nåes via localhost:8000/testApp <br />
+Den viser en HTML-side og bruker statisk CSS fil.
+<br /><br />
 KJØRE Django Server:	<br />
 	python manage.py runserver	<br />
 NY APP:	<br />
 	python manage.py startapp ‘appnavn’	<br />
 
-—— GIT ——
+—— GIT ——<br />
 git add .	<br />
 git commit -m «melding»	<br />
 git pull	<br />
