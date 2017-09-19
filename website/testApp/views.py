@@ -25,3 +25,9 @@ def index5(request):
 
 def index(request):
     return render(request, 'testApp/index.html')
+
+def hei(request):
+	return HttpResponse("HEISANN!")
+
+def brann(request):
+	return HttpResponse("""<p style="color:red;"> BRANN!! </p>""")
