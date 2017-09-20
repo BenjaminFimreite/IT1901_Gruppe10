@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <h2>Home</h2>
+  {% load permission_tags %}
+  {% if user|can:'rettighet_yeye' %}
+     <a href="/dennesidenfinnesikke">Har rettigheter_yeye</a>
+  {% endif %}
+  {% if user|can:'enda_en_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har enda_en_rettighet</a>
+  {% endif %}
+
+{% endblock %}
