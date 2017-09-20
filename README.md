@@ -20,3 +20,8 @@ git push	<br />
 git status	// Viser status om filer	<br />
 <br />
 git branch	// Viser alle branches		<br />
+
+Roller:
+Superuser:		Brukernavn: root, passord: g10Erbest
+Tekniker: 		Brukernavn: Kim K, passord: Kanye
+Booking Ansvarlig :	Brukernavn: Drake, passord: Hotline Bling
