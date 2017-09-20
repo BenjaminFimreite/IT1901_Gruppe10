@@ -18,3 +18,9 @@ git pull	<br />
 git push	<br />
 <br />
 git status	// Viser status om filer	<br />
+
+
+Roller: 					<br/>
+Superuser:	Brukernavn: root, passord: g10Erbest	<br/>
+Tekniker: Brukernavn: Kim K, passord: Kanye		<br/>
+Booking Ansvarlig :	Brukernavn: Drake, passord: Hotline Bling	<br/>
