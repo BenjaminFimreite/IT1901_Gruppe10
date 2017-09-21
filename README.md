@@ -2,7 +2,7 @@
 
 Hei alle sammen :-)
 
-testApp nåes via localhost:8000/testApp <br />
+Siden nåes via localhost:8000 <br />
 Den viser en HTML-side og bruker statisk CSS fil.
 <br /><br />
 KJØRE Django Server:	<br />
