@@ -18,7 +18,6 @@ git pull	<br />
 git push	<br />
 <br />
 git status	// Viser status om filer	<br />
-<<<<<<< HEAD
 <br />
 git branch	// Viser alle branches		<br />
 
