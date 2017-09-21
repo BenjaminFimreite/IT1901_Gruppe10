@@ -5,5 +5,6 @@
 {% block content %}
   <h2>Create a booking</h2>
   {% load permission_tags %}
+	{% booking.objects.all() %}
 
 {% endblock %}
