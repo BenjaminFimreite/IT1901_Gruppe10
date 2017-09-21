@@ -8,10 +8,15 @@
 </ol>
 
 {% load permission_tags %}
+<div id="home">
     {% if user|can:'send_bookingoffer' %}
-        <a href="{% url 'create_booking' %}">create a booking</a>
+        <a href="{% url 'create_booking' %}">create a booking</a><br>
     {% endif %}
     {% if user|can:'view_my_shift' %}
-        <a href="{% url 'shifts' %}">view shifts</a>
+        <a href="{% url 'shifts' %}">view shifts</a><br>
     {% endif %}
+		{% if user|can:'view_bookings' %}
+        <a href="{% url 'view_bookings' %}">view bookings</a><br>
+    {% endif %}
+</div>
 {% endblock %}

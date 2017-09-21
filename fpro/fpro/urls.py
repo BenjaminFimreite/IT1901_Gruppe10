@@ -13,4 +13,6 @@ urlpatterns = [
     #url(r'^create_booking$', TemplateView.as_view(template_name='create_booking.html'), name='create_booking'),
     url(r'^admin/', admin.site.urls),
     url(r'^shifts$', views.shifts, name='shifts'),
+	url(r'^view_bookings$', views.view_bookings, name="view_bookings"),
+	url(r'^view_booking/(?P<booking_id>[0-9]+)/$', views.view_booking, name="view_booking"),
 ]
