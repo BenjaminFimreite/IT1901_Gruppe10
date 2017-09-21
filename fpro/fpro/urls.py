@@ -12,6 +12,5 @@ urlpatterns = [
 	url(r'^create_booking$', views.create_booking, name="create_booking"),
     #url(r'^create_booking$', TemplateView.as_view(template_name='create_booking.html'), name='create_booking'),
     url(r'^admin/', admin.site.urls),
-    url(r'^create_booking$', TemplateView.as_view(template_name='create_booking.html'), name='create_booking'),
-    url(r'^shifts$', TemplateView.as_view(template_name='shifts.html'), name='shifts'),
+    url(r'^shifts$', views.shifts, name='shifts'),
 ]
