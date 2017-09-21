@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Booking{% endblock %}
 
@@ -11,8 +12,9 @@
         <li><p>{{ b }}</p></li>
   {% endfor %}
 
+	<img src="{% static "img/FSM_2.png" %}" alt="">
+
   {% if user|can:'send_bookingoffer' %}
-    <h2>Create a booking</h2>
   {% else %}
       <script language="javascript">window.location.href = "/"</script>
   {% endif %}
