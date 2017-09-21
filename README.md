@@ -1,15 +1,17 @@
 # IT1901_Gruppe10
 
-Hei alle sammen :-)
+Hei alle sammen :-) 
 
-Siden nåes via localhost:8000 <br />
-Den viser en HTML-side og bruker statisk CSS fil.
+## LES MEG!
+Det er litt kronglete å jobbe med django, så her er en liter recap.  <br />
+'''
+Siden nåes via 127.0.0.1:8000 				<br />
 <br /><br />
 KJØRE Django Server:	<br />
 	python manage.py runserver	<br />
 NY APP:	<br />
 	python manage.py startapp ‘appnavn’	<br />
-
+'''
 —— GIT ——<br />
 git add .	<br />
 git commit -m «melding»	<br />
