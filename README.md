@@ -50,3 +50,17 @@ Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	<br/>
 Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		<br/>
 Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	<br/>
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	<br/>
+
+## Nettsider
+```
+Tentativ og UFULLSTENDIG oversikt over nettsider.
+
+* Create Booking: to creat booking (added to DB)
+* View Dates and Bookings: to view calender view with busy and available dates/scenes and concerts on scenes
+* View Bookings: to accept/decline offer (change in DB)
+* View Shifts: for technicians to view when they are to work
+* Send Tech Needs: for manager to send technical needs
+* View Tech Needs: to view tech needs for a band
+* View Tech Crew: to view all tech crew for all bookings/concerts on all scenes at all times
+* Send Booking Offer: to send a created booking offer to band after(?) accepted
+```
