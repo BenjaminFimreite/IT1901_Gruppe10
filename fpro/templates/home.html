@@ -11,5 +11,10 @@
   {% if user|can:'enda_en_rettighet' %}
      <a href="/dennesidenfinnesHELLERikke">Har enda_en_rettighet</a>
   {% endif %}
-
+  {% if user|can:'eksempel_bruker_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har eksempel_bruker_rettighet</a>
+  {% endif %}
+  {% if user|can:'en_annen_bruker_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har en_annen_bruker_rettighet</a>
+  {% endif %}
 {% endblock %}
