@@ -46,16 +46,15 @@ git checkout branchName		// Flytter det til 'branchName'
 ```
 ## Roller i DB
 ```
-Superuser:		Brukernavn: admin, 	passord: qwerty123	<br/>
-Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	<br/>
-Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		<br/>
-Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	<br/>
-Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	<br/>
+Superuser:		Brukernavn: admin, 	passord: qwerty123	
+Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	
+Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		
+Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	
+Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 ```
 ## Nettsider
-```
 Tentativ og UFULLSTENDIG oversikt over nettsider.
-
+```
 * Create Booking: to creat booking (added to DB)
 * View Dates and Bookings: to view calender view with busy and available dates/scenes and concerts on scenes
 * View Bookings: to accept/decline offer (change in DB)
