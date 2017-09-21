@@ -3,8 +3,11 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-  <h2>Home</h2>
-  {% load permission_tags %}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Home</li>
+</ol>
+
+{% load permission_tags %}
   {% if user|can:'rettighet_yeye' %}
      <a href="/dennesidenfinnesikke">Har rettigheter_yeye</a>
   {% endif %}
