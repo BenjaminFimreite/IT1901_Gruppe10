@@ -17,6 +17,10 @@ git pull	<br />
 // Fiks eventuelle konflikter	<br />
 git push	<br />
 <br />
+// Om det blir problemer med merging kan du kjøre dette (da resettes alt du har lokalt til det som ligger på git, så alle endringer du har gjort siden forrige pull forsvinner): <br/>
+git fetch --all <br/>
+git reset --hard origin/master <br/>
+
 git status	// Viser status om filer	<br />
 <br />
 git branch	// Viser alle branches		<br />
