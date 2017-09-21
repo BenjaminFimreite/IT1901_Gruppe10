@@ -15,3 +15,8 @@ def create_booking(request):
         'bookings': bookings,
     }
 	return HttpResponse(template.render(context, request))
+
+def shifts(request):
+    template = loader.get_template('shifts.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
