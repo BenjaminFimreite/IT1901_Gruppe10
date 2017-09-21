@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <h2>Create a booking</h2>
+  {% load permission_tags %}
+  {% if user|can:'rettighet_yeye' %}
+     <a href="/dennesidenfinnesikke">Har rettigheter_yeye</a>
+  {% endif %}
+  {% if user|can:'enda_en_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har enda_en_rettighet</a>
+  {% endif %}
+  {% if user|can:'eksempel_bruker_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har eksempel_bruker_rettighet</a>
+  {% endif %}
+  {% if user|can:'en_annen_bruker_rettighet' %}
+     <a href="/dennesidenfinnesHELLERikke">Har en_annen_bruker_rettighet</a>
+  {% endif %}
+{% endblock %}
