@@ -17,4 +17,7 @@
   {% if user|can:'en_annen_bruker_rettighet' %}
      <a href="/dennesidenfinnesHELLERikke">Har en_annen_bruker_rettighet</a>
   {% endif %}
+  {% if user|can:'view_concerts' %}
+     <a href="/dennesidenfinnesHELLERikke">view concerts</a>
+  {% endif %}
 {% endblock %}
