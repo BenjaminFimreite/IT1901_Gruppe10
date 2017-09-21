@@ -8,7 +8,10 @@
 </ol>
 
 {% load permission_tags %}
-  {% if user|can:'send_bookingoffer' %}
-    <a href="{% url 'create_booking' %}">create a booking</a>
+    {% if user|can:'send_bookingoffer' %}
+        <a href="{% url 'create_booking' %}">create a booking</a>
+    {% endif %}
+    {% if user|can:'view_my_shift' %}
+        <a href="{% url 'shifts' %}">view shifts</a>
     {% endif %}
 {% endblock %}

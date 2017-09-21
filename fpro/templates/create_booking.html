@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Booking{% endblock %}
 
+{% load permission_tags %}
 {% block content %}
   <h2>Create a booking</h2>
   {% load permission_tags %}
@@ -10,5 +11,10 @@
         <li><p>{{ b }}</p></li>
   {% endfor %}
 
+  {% if user|can:'send_bookingoffer' %}
+    <h2>Create a booking</h2>
+  {% else %}
+      <script language="javascript">window.location.href = "/"</script>
+  {% endif %}
 
 {% endblock %}
