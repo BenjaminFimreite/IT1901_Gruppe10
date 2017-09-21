@@ -45,12 +45,13 @@ git branch minNyeBranch		// Lager en ny branch med navnet 'minNyeBranch'
 git checkout branchName		// Flytter det til 'branchName'
 ```
 ## Roller i DB
+```
 Superuser:		Brukernavn: admin, 	passord: qwerty123	<br/>
 Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	<br/>
 Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		<br/>
 Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	<br/>
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	<br/>
-
+```
 ## Nettsider
 ```
 Tentativ og UFULLSTENDIG oversikt over nettsider.
