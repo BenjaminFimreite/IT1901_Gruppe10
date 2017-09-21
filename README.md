@@ -34,8 +34,7 @@ git pull
 git push	
 
 // Om det blir problemer med merging kan du kjøre dette (da resettes alt du har lokalt til det som ligger på git, så alle endringer du har gjort siden forrige pull forsvinner):
-// DET KAN VÆRE LURT Å KOORDINERE DETTE MED GRUPPA!!! DETTE ER SISTE UTVEI, IKKE GJØR DETTE FØR DU HAR SPURT OM LOV XD XD XD
-// DU KAN SLETTE HELE REPOET!!!
+// DET KAN VÆRE LURT Å KOORDINERE DETTE MED GRUPPA
 git fetch --all 
 git reset --hard origin/master 
 
