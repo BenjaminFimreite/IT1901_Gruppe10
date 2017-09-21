@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'rolepermissions',
-    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -22,6 +22,6 @@ git status	// Viser status om filer	<br />
 git branch	// Viser alle branches		<br />
 
 Roller: 					<br/>
-Superuser:		Brukernavn: root, passord: g10Erbest	<br/>
+Superuser:		Brukernavn: admin, passord: qwerty123	<br/>
 Tekniker: 		Brukernavn: Kim K, passord: Kanye		<br/>
 Booking Ansvarlig :	Brukernavn: Drake, passord: Hotline Bling	<br/>
