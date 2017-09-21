@@ -2,22 +2,35 @@ from rolepermissions.roles import AbstractUserRole
 
 class Arrangor(AbstractUserRole):
     available_permissions = {
-            'eksempel_bruker_rettighet' : True,
-            }
+        'view_edit_all_shifts' : True,
+        'view_concerts' : True,
+    }
 
 
 class BookingSjef(AbstractUserRole):
     available_permissions = {
-            'en_annen_bruker_rettighet' : True,
-            }
+        'view_dates' : True,
+        'accept_booking' : True,
+        'view_bookings' : True,
+        'view_economy' : True,
+    }
 
 class BookingAnsvarlig(AbstractUserRole):
     available_permissions = {
-            'enda_en_rettighet' : True,
-            }
+        'send_bookingoffer' : True,
+        'search_band' : True,
+        'search_concerts' : True,
+        'search_band_info' : True,
+        'tech_needs' : True,
+        'view_bookings' : True,
+    }
 
 class Tekniker(AbstractUserRole):
     available_permissions = {
-            'rettighet_yeye' : True,
-            }
+        'view_my_shifts' : True,
+    }
 
+class Manager(AbstractUserRole):
+    available_permissions = {
+        'send_techneeds' : True,
+    }
