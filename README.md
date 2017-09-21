@@ -7,12 +7,18 @@ Det er litt kronglete å jobbe med django, så her er en liter recap.
 ```
 KJØRE Django Server:	
 	python3 manage.py runserver	// Siden nåes via 127.0.0.1:8000 	
+	
 NY App:	
 	python3 manage.py startapp ‘appnavn’
+	
 Migrate modeller inn i database (SQLite):
 	python3 manage.py makemigrations
 	python3 manage.py migrate
+	
+Shell:
+	python3 manage.py shell		// her kan du gjøre mye rart
 ```
+Endre DB på nettsiden: 127.0.0.1:8000/admin	<br />
 
 ## GIT
 Git er like kronglete, her er ofte brukte kommandoer.
