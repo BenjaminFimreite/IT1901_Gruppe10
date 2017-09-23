@@ -16,6 +16,6 @@ urlpatterns = [
 	url(r'^view_bookings$', views.view_bookings, name="view_bookings"),
 	url(r'^view_booking/(?P<booking_id>[0-9]+)/$', views.view_booking, name="view_booking"),
     url(r'^send_email$', views.send_email, name="sendemail"),
-    url(r'^sentbooking$', TemplateView.as_view(template_name='sentbooking.html'), name="sentbooking")
-
+    url(r'^sentbooking$', TemplateView.as_view(template_name='sentbooking.html'), name="sentbooking"),
+	url(r'^concert_overview$', views.concert_overview, name='concert_overview'),
 ]

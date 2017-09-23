@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load permission_tags %}
+
+{% block content %}
+<div id="concert_overview">
+	{% if user|can:'view_concerts' %}
+	<h1>Concert Overview</h1>
+
+	{% for e in bookings_array.keys %}
+		<p>Scene: {{e}}</p>
+		<ul>
+			{% for b in bookings %}
+				{% if b.scene == e %}
+				<li>{{b}}</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% endfor %}
+	{% endif %}
+</div>
+{% endblock %}

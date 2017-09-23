@@ -15,6 +15,9 @@
     {% if user|can:'view_my_shift' %}
         <a href="{% url 'shifts' %}">view shifts</a><br>
     {% endif %}
+		{% if user|can:'view_concerts' %}
+        <a href="{% url 'concert_overview' %}">concert overview</a><br>
+    {% endif %}
 		{% if user|can:'view_bookings' %}
         <a href="{% url 'view_bookings' %}">view bookings</a><br>
     {% endif %}

@@ -57,3 +57,22 @@ def view_booking(request, booking_id):
 	   'booking': booking,
 	}
 	return HttpResponse(template.render(context, request))
+
+def concert_overview(request):
+	bookings = Booking.objects.all()
+	scenes = Scene.objects.all()
+	bookings_array = {}
+	for scene in scenes:
+		for booking in bookings:
+			if booking.scene == scene:
+				bookings_array[scene] = []
+				bookings_array[scene] += [booking]
+
+	template = loader.get_template("concert_overview.html")
+	context = {
+		'scenes' : scenes,
+	  	'bookings': bookings,
+		'bookings_array': bookings_array,
+	}
+
+	return HttpResponse(template.render(context, request))
