@@ -47,7 +47,8 @@ git checkout branchName		// Flytter det til 'branchName'
 ```
 Superuser:		Brukernavn: admin, 	passord: qwerty123	
 Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	
-Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		
+Tekniker: 		Brukernavn: Kim K, 	passord: Kanye	
+Tekniker:		Brukernavn: Eminem	passord: RapGod123
 Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 ```
