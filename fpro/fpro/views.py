@@ -3,9 +3,8 @@ from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
 
-from .models import Booking
-from .models import Scene
-from .models import Band
+from django.contrib.auth.models import User
+from .models import Booking, Scene, Band
 
 
 # Create your views here.
@@ -36,9 +35,21 @@ def create_booking(request):
 	return HttpResponse(template.render(context, request))
 
 def shifts(request):
-    template = loader.get_template('shifts.html')
-    context = {}
-    return HttpResponse(template.render(context, request))
+	bookings = Booking.objects.all()
+	user = request.user
+	user_bookings = []
+
+	for booking in bookings:
+		if user in booking.technicians.all():
+			user_bookings += [booking]
+
+	print(user_bookings)
+
+	template = loader.get_template('shifts.html')
+	context = {
+		'user_bookings' : user_bookings,
+	}
+	return HttpResponse(template.render(context, request))
 
 def view_bookings(request):
 	bookings = Booking.objects.all()
