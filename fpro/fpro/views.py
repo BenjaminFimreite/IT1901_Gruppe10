@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.template import loader
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail, BadHeaderError
 
 from .models import Booking
 from .models import Scene
@@ -8,6 +9,24 @@ from .models import Band
 
 
 # Create your views here.
+def send_email(request):
+	manager = request.POST.get('name')
+	print(manager)
+	comment = request.POST.get('comment')
+	price = request.POST.get('price')
+	msg = "Prisforslag: " + price + "\n" + "Kommentar: " + comment
+	sender = 'fpro.no'
+	subject = 'Bookingtilbud'
+	if comment and manager:
+		try:
+			send_mail(subject, msg, sender, [manager])
+		except BadHeaderError:
+			return HttpResponse('Invalid header found')
+		return HttpResponseRedirect('/sentbooking')
+	else:
+		return HttpResponse('Make sure all fields are entered and valid.')
+
+
 def create_booking(request):
 	bookings = Booking.objects.all()
 	template = loader.get_template('create_booking.html')
