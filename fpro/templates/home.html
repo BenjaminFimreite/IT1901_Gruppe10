@@ -21,5 +21,8 @@
 		{% if user|can:'view_bookings' %}
         <a href="{% url 'view_bookings' %}">view bookings</a><br>
     {% endif %}
+    {% if user|can:'view_edit_all_shifts' %}
+        <a href="{% url 'shifts' %}">view and edit shifts</a><br>
+    {% endif %}
 </div>
 {% endblock %}
