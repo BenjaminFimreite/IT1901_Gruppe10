@@ -47,6 +47,7 @@ def shifts(request):
 
 	template = loader.get_template('shifts.html')
 	context = {
+	 	'bookings': bookings,
 		'user_bookings' : user_bookings,
 	}
 	return HttpResponse(template.render(context, request))

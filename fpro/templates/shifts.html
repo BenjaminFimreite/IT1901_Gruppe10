@@ -13,12 +13,14 @@
       <h4>Here you can add and edit working shifts</h4>
       <p>List of registered shifts</p>
       <ul>
-        {% for booking in user_bookings %}
+        {% for booking in bookings %}
         <li>
           {{booking}}
           <ul>
             <!--henter ut hvilken tekniker som er satt av til bookingen-->
-            <li>{{booking.technicians}}</li>
+						{% for technician in booking.technicians.all %}
+            <li>{{technician}}</li>
+						{% endfor %}
           </ul>
         </li>
         {% endfor %}
