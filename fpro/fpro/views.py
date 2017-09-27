@@ -8,9 +8,11 @@ from .models import Booking, Scene, Band
 
 
 # Create your views here.
+#def addBookingInDb(request):
+
+
 def send_email(request):
 	manager = request.POST.get('name')
-	print(manager)
 	comment = request.POST.get('comment')
 	price = request.POST.get('price')
 	msg = "Prisforslag: " + price + "\n" + "Kommentar: " + comment
