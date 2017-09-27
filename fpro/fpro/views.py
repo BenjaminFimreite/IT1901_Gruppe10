@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
+from .models import BandInfo
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 
 from django.contrib.auth.models import User
 from .models import Booking, Scene, Band
@@ -116,6 +119,10 @@ def view_booking(request, booking_id):
 	   'booking': booking,
 	}
 	return HttpResponse(template.render(context, request))
+
+def view_bands (request):
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 def concert_overview(request):
 	bookings = Booking.objects.all()
