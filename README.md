@@ -34,7 +34,6 @@ git pull
 git push	
 
 // Om det blir problemer med merging kan du kjøre dette (da resettes alt du har lokalt til det som ligger på git, så alle endringer du har gjort siden forrige pull forsvinner):
-// DET KAN VÆRE LURT Å KOORDINERE DETTE MED GRUPPA
 git fetch --all 
 git reset --hard origin/master 
 
@@ -47,7 +46,8 @@ git checkout branchName		// Flytter det til 'branchName'
 ```
 Superuser:		Brukernavn: admin, 	passord: qwerty123	
 Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	
-Tekniker: 		Brukernavn: Kim K, 	passord: Kanye		
+Tekniker: 		Brukernavn: Kim K, 	passord: Kanye	
+Tekniker:		Brukernavn: Eminem	passord: RapGod123
 Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 ```

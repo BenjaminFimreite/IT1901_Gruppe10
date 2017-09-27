@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking{% endblock %}
+
+{% load permission_tags %}
+{% block content %}
+  <h2>Create a booking</h2>
+  {% load permission_tags %}
+
+  <form method="post">
+		{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+  </form>
+
+  {% if user|can:'send_bookingoffer' %}
+  {% else %}
+      <script language="javascript">window.location.href = "/"</script>
+  {% endif %}
+
+{% endblock %}

@@ -5,5 +5,45 @@
 {% block content %}
   <h2>Shifts</h2>
   {% load permission_tags %}
+	<p>Logged in as user: {{user}}</p>
+
+  <!--Dette vises for arrangøren-->
+  {% if user|can:'view_edit_all_shifts' %}
+    <div id="shits">
+      <h4>Here you can add and edit working shifts</h4>
+      <p>List of registered shifts</p>
+      <ul>
+        {% for booking in bookings %}
+        <li>
+          {{booking}}
+          <ul>
+            <!--henter ut hvilken tekniker som er satt av til bookingen-->
+						{% for technician in booking.technicians.all %}
+            <li>{{technician}}</li>
+						{% endfor %}
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+  <!--Dette vises for teknikerne-->
+  {% if user|can:'view_my_shifts' %}
+  <div>
+    <h3>You are working at the following concerts: </h3>
+    <ul>
+      {% for booking in user_bookings %}
+      <li>
+        {{booking}}
+        <ul>
+            <!--Henter ut spesifike krav til bookingen-->
+          </li>{{booking.technicalRequirements}}</li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 
 {% endblock %}

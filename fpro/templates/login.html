@@ -1,12 +1,25 @@
-
-
-{% block title %}Login{% endblock %}
-
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Login</title>
+      
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="card card-login mx-auto mt-5" style="width: 20rem;">
+        <div class="card-header">FPro</div>
+          <div class="card-body">
+           <form method="post">
+             {% csrf_token %}
+             {{ form.as_p }}
+               <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
+         </div>
+       </div>
+     </div>
+   </div>   
+  </body>
+</html>
