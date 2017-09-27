@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load permission_tags %}
+
+{% block content %}
+	<div id="view_bookings">
+		{% if user|can:'view_bookings' %}
+		<h1>View Bookings</h1>
+		{% for b in bookings %}
+		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/view_booking/{{b.id}}'">See Details</button></li>
+		{% endfor %}
+		{% else %}
+			<script language="javascript">window.location.href = "/"</script>
+		{% endif %}
+		<img src="{% static "img/heart.png" %}" alt="hjerte">
+	</div>
+{% endblock %}

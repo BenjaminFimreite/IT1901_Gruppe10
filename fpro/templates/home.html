@@ -11,12 +11,22 @@
     <div class="row">
       <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
   {% load permission_tags %}
-      {% if user|can:'send_bookingoffer' %}
-          <a href="{% url 'create_booking' %}">create a booking</a>
-      {% endif %}
-      {% if user|can:'view_my_shift' %}
-          <a href="{% url 'shifts' %}">view shifts</a>
-      {% endif %}
+
+    {% if user|can:'send_bookingoffer' %}
+        <a href="{% url 'create_booking' %}">create a booking</a><br>
+    {% endif %}
+    {% if user|can:'view_my_shifts' %}
+        <a href="{% url 'shifts' %}">view my shifts</a><br>
+    {% endif %}
+		{% if user|can:'view_concerts' %}
+        <a href="{% url 'concert_overview' %}">concert overview</a><br>
+    {% endif %}
+		{% if user|can:'view_bookings' %}
+        <a href="{% url 'view_bookings' %}">view bookings</a><br>
+    {% endif %}
+    {% if user|can:'view_edit_all_shifts' %}
+        <a href="{% url 'shifts' %}">view and edit shifts</a><br>
+    {% endif %}
       </div>
     </div>
   </div>

@@ -1,0 +1,36 @@
+
+/* Home */
+#home a {
+	margin-left: 25px;
+}
+
+/* View Bookings */
+
+#view_bookings li {
+	padding: 20px;
+	padding-left: 30px;
+	text-align: center;
+}
+#view_bookings img {
+	padding: 30px;
+	display: block;
+	margin: auto;
+}
+
+#view_bookings h1 {
+	text-align: center;
+	padding: 10px;
+}
+
+/* view_booking */
+#view_booking li {
+	list-style-type: square;
+}
+
+#view_booking h1 {
+	text-align: center;
+}
+
+#view_booking p{
+	color: lightgray;
+}
