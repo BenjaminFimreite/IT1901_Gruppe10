@@ -29,3 +29,12 @@ class Booking(models.Model):
 
 	def __str__(self):
                 return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
+
+	
+
+class BandInfo (models.Model) :
+	band = models.ForeignKey(Band, on_delete=models.CASCADE)
+	StreamCount = models.CharField(max_length = 250)
+	Visits =models.CharField(max_length = 500)
+	def _str_(self):
+		return self.band.bandName + self.StreamCount + self.Visits

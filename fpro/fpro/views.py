@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
+from .models import BandInfo
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 
 from django.contrib.auth.models import User
 from .models import Booking, Scene, Band
@@ -74,14 +77,23 @@ def create_booking2(request):
 		form = CreateBookingForm()
 
 	context = {
-		'form' : form,
+		'form' : form
     }
 	return HttpResponse(template.render(context, request))
+
 
 def shifts(request):
 	bookings = Booking.objects.all()
 	user = request.user
 	user_bookings = []
+	template = loader.get_template('shifts.html')
+
+	if request.method == 'POST':
+		form = AddShiftForm(request.POST)
+#		if form.is_valid():
+	#		break
+	else:
+		form = AddShiftForm()
 
 	for booking in bookings:
 		if user in booking.technicians.all():
@@ -89,8 +101,8 @@ def shifts(request):
 
 	print(user_bookings)
 
-	template = loader.get_template('shifts.html')
 	context = {
+		'form' : form,
 	 	'bookings': bookings,
 		'user_bookings' : user_bookings,
 	}
@@ -113,6 +125,10 @@ def view_booking(request, booking_id):
 	   'booking': booking,
 	}
 	return HttpResponse(template.render(context, request))
+
+def view_bands (request):
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 def concert_overview(request):
 	bookings = Booking.objects.all()

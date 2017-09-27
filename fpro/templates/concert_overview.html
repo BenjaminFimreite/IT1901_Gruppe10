@@ -5,27 +5,44 @@
 
 {% block content %}
 <div id="concert_overview">
-	{% if user|can:'view_concerts' %}
-	<h1>Concert Overview</h1>
+    {% if user|can:'view_concerts' %}
+    
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Coming concerts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#archive" role="tab">Archive</a>
+        </li>
+    </ul>
 
-	<h2>Concerts @ scenes</h2>
-	{% for e in bookings_array.keys %}
-		<p><b>Scene: {{e}}</b></p>
-		<ul>
-			{% for b in bookings %}
-				{% if b.scene == e %}
-				<li>
-					{{b}}
-					<ul> <b>Working tech crew</b>
-						{% for tech in b.technicians.all %}
-							<li>{{tech}}</li>
-						{% endfor %}
-					</ul>
-				</li>
-				{% endif %}
-			{% endfor %}
-		</ul>
-	{% endfor %}
-	{% endif %}
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel">
+            <h2>Concerts @ scenes</h2>
+            {% for e in bookings_array.keys %}
+            <p><b>Scene: {{e}}</b></p>
+            <ul>
+                {% for b in bookings %}
+                {% if b.scene == e %}
+                <li>
+                    {{b}}
+                    <ul> <b>Working tech crew</b>
+                        {% for tech in b.technicians.all %}
+                        <li>{{tech}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            {% endif %}</div>
+        <div class="tab-pane" id="archive" role="tabpanel">
+            <!-- Edit this -->
+            ...
+        </div>
+    </div>
 </div>
 {% endblock %}
