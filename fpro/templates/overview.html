@@ -4,6 +4,11 @@
 {% load permission_tags %}
 
 {% block content %}
+<ol class="breadcrumb">  
+   <li class="breadcrumb-item"><a href="/">Home</a></li>
+   <li class="breadcrumb-item active">Overview</li>
+</ol>
+
 <div id="concert_overview">
 	{% if user|can:'view_concerts' %}
 	<h1>Concert Overview</h1>

@@ -32,3 +32,4 @@
 
 ### Django ###
 *.pyc
+db.sqlite3

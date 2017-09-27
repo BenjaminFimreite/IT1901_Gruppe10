@@ -14,37 +14,37 @@
 <body>
   {% if user.is_authenticated %}
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-       <a class="navbar-brand" href="/">FPro</a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #39797a;">
+         <a class="navbar-brand" href="/">FPRO</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hallaisen</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Hallaisen</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="{% url 'logout' %}">
+             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">logout <i class="fa fa-sign-out" aria-hi    dden="true"></i></button>
+          </form>
+        </div>
+      </nav>
+    </header>
 
-  {% else %}
-  <script language="javascript">window.location.href = "/login"</script>
-  {% endif %}
-  <main>
+    {% else %}
+    <script language="javascript">window.location.href = "/login"</script>
+    {% endif %}
+    <main>
 
-    {% block content %}
-    {% endblock %}
-    <nav class="navbar fixed-bottom bg-info text-white">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12">
-               <small> Copyright © 2017 FPRO, Inc. </small> 
+      {% block content %}
+      {% endblock %}
+      <nav class="navbar fixed-bottom navbar-light text-white" style="background-color: #39797a">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                 <small> Copyright © 2017 FPRO, Inc. </small> 
             </div>
           </div>
       </div>

@@ -19,10 +19,10 @@
         <a href="{% url 'shifts' %}">view my shifts</a><br>
     {% endif %}
 		{% if user|can:'view_concerts' %}
-        <a href="{% url 'concert_overview' %}">concert overview</a><br>
+        <a href="{% url 'overview' %}">overview</a><br>
     {% endif %}
 		{% if user|can:'view_bookings' %}
-        <a href="{% url 'view_bookings' %}">view bookings</a><br>
+        <a href="{% url 'bookings' %}">bookings</a><br>
     {% endif %}
     {% if user|can:'view_edit_all_shifts' %}
         <a href="{% url 'shifts' %}">view and edit shifts</a><br>

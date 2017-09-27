@@ -4,11 +4,16 @@
 {% load permission_tags %}
 
 {% block content %}
+<ol class="breadcrumb">                                                                             
+ <li class="breadcrumb-item"><a href="/">Home</a></li>
+ <li class="breadcrumb-item active">Bookings</li>
+</ol>
+
 	<div id="view_bookings">
 		{% if user|can:'view_bookings' %}
 		<h1>View Bookings</h1>
 		{% for b in bookings %}
-		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/view_booking/{{b.id}}'">See Details</button></li>
+		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See Details</button></li>
 		{% endfor %}
 		{% else %}
 			<script language="javascript">window.location.href = "/"</script>
