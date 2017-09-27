@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load permission_tags %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/bands">Bands</a></li>
+  <li class="breadcrumb-item active">Band</li>
+ </ol>
+
+
+<div id="view_band">
+	{% if user|can:'search_band' %}
+	<h1>View Band</h1>
+	<p>{{band}}</p>
+	<ul>
+		<li>Band: {{band.bandName}}</li>
+	</ul>
+	{% else %}
+	{% endif %}
+</div>
+{% endblock %}

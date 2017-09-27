@@ -24,6 +24,9 @@
 		{% if user|can:'view_bookings' %}
         <a href="{% url 'bookings' %}">bookings</a><br>
     {% endif %}
+		{% if user|can:'search_band' %}
+        <a href="{% url 'bands' %}">view bands</a><br>
+    {% endif %}
     {% if user|can:'view_edit_all_shifts' %}
         <a href="{% url 'shifts' %}">view and edit shifts</a><br>
     {% endif %}

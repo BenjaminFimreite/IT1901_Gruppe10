@@ -120,6 +120,23 @@ def booking(request, booking_id):
 	}
 	return HttpResponse(template.render(context, request))
 
+def bands(request):
+	bands = Band.objects.all()
+	template = loader.get_template('bands.html')
+	context = {
+	   'bands': bands,
+	}
+	return HttpResponse(template.render(context, request))
+
+def band(request, band_id):
+	bands = Band.objects.all()
+	band = Band.objects.get(id=band_id)
+	template = loader.get_template('band.html')
+	context = {
+	   'band': band,
+	}
+	return HttpResponse(template.render(context, request))
+
 def overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
