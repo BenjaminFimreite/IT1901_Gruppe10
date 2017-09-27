@@ -28,7 +28,6 @@ class Booking(models.Model):
 
 	def __str__(self):
                 return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
-<<<<<<< HEAD
 
 	
 
@@ -38,5 +37,3 @@ class BandInfo (models.Model) :
 	Visits =models.CharField(max_length = 500)
 	def _str_(self):
 		return self.band.bandName + self.StreamCount + self.Visits
-=======
->>>>>>> 6ebf241aa1810d275ad8a01d5aee3aeba043ba3e

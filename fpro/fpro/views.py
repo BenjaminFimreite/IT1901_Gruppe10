@@ -111,13 +111,10 @@ def view_booking(request, booking_id):
 	}
 	return HttpResponse(template.render(context, request))
 
-<<<<<<< HEAD
-
-
 def view_bands (request):
+    context = {}
+    return HttpResponse(template.render(context, request))
 
-
-=======
 def concert_overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
@@ -136,4 +133,3 @@ def concert_overview(request):
 	}
 
 	return HttpResponse(template.render(context, request))
->>>>>>> 6ebf241aa1810d275ad8a01d5aee3aeba043ba3e
