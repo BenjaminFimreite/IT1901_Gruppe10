@@ -102,29 +102,25 @@ def shifts(request):
 	}
 	return HttpResponse(template.render(context, request))
 
-def view_bookings(request):
+def bookings(request):
 	bookings = Booking.objects.all()
-	template = loader.get_template('view_bookings.html')
+	template = loader.get_template('bookings.html')
 	context = {
 	   'bookings': bookings,
 	}
 	return HttpResponse(template.render(context, request))
 
-def view_booking(request, booking_id):
+def booking(request, booking_id):
 	#return HttpResponse("You're looking at booking %s." % booking_id)
 	bookings = Booking.objects.all()
 	booking = Booking.objects.get(id=booking_id)
-	template = loader.get_template('view_booking.html')
+	template = loader.get_template('booking.html')
 	context = {
 	   'booking': booking,
 	}
 	return HttpResponse(template.render(context, request))
 
-def view_bands (request):
-    context = {}
-    return HttpResponse(template.render(context, request))
-
-def concert_overview(request):
+def overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
 	bookings_array = {}
@@ -134,7 +130,7 @@ def concert_overview(request):
 				bookings_array[scene] = []
 				bookings_array[scene] += [booking]
 
-	template = loader.get_template("concert_overview.html")
+	template = loader.get_template("overview.html")
 	context = {
 		'scenes' : scenes,
 	  	'bookings': bookings,

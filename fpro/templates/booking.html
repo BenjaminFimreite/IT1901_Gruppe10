@@ -4,6 +4,14 @@
 {% load permission_tags %}
 
 {% block content %}
+
+<ol class="breadcrumb">                 
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
+  <li class="breadcrumb-item active">Booking</li>
+ </ol>
+
+
 <div id="view_booking">
 	{% if user|can:'view_bookings' %}
 	<h1>View Booking</h1>
