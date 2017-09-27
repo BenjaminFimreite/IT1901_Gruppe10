@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load permission_tags %}
+
+{% block content %}
+<ol class="breadcrumb">
+ <li class="breadcrumb-item"><a href="/">Home</a></li>
+ <li class="breadcrumb-item active">Bookings</li>
+</ol>
+
+	<div id="pending_bookings">
+		{% if user|can:'view_bookings' %}
+		<p>TODO: Her skal man kunne godkjenner eller avslå booking, knapper er foreløpig linka til details</p>
+
+		<h1>Pending Bookings</h1>
+		{% for b in pending_bookings_array %}
+		<li>{{ b }}
+			<button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">Accept Bookingoffer</button>
+			<button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">Decline Bookingoffer</button>
+		</li>
+		{% endfor %}
+		{% else %}
+			<script language="javascript">window.location.href = "/"</script>
+		{% endif %}
+		<img src="{% static "img/heart.png" %}" alt="hjerte">
+	</div>
+{% endblock %}

@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from .models import Booking, Scene, Band
 from .forms import *
 
+import datetime
 
 # Create your views here.
 #def addBookingInDb(request):
@@ -118,6 +119,23 @@ def booking(request, booking_id):
 	context = {
 	   'booking': booking,
 	}
+	return HttpResponse(template.render(context, request))
+
+def pending_bookings(request):
+	bookings = Booking.objects.all()
+
+	pending_bookings_array = []
+
+	for booking in bookings:
+		if not booking.approvedBookingBoss:
+			pending_bookings_array += [booking]
+
+	template = loader.get_template('pending_bookings.html')
+	context = {
+	   'bookings': bookings,
+	   'pending_bookings_array' : pending_bookings_array,
+	}
+
 	return HttpResponse(template.render(context, request))
 
 def bands(request):

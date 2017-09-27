@@ -13,22 +13,25 @@
   {% load permission_tags %}
 
     {% if user|can:'send_bookingoffer' %}
-        <a href="{% url 'create_booking' %}">create a booking</a><br>
+        <a href="{% url 'create_booking' %}">Create a booking</a><br>
     {% endif %}
     {% if user|can:'view_my_shifts' %}
-        <a href="{% url 'shifts' %}">view my shifts</a><br>
+        <a href="{% url 'shifts' %}">View my shifts</a><br>
     {% endif %}
 		{% if user|can:'view_concerts' %}
-        <a href="{% url 'overview' %}">overview</a><br>
+        <a href="{% url 'overview' %}">Overview</a><br>
     {% endif %}
 		{% if user|can:'view_bookings' %}
-        <a href="{% url 'bookings' %}">bookings</a><br>
+        <a href="{% url 'bookings' %}">Bookings</a><br>
+    {% endif %}
+		{% if user|can:'view_bookings' %}
+        <a href="{% url 'pending_bookings' %}">Pending bookings</a><br>
     {% endif %}
 		{% if user|can:'search_band' %}
-        <a href="{% url 'bands' %}">view bands</a><br>
+        <a href="{% url 'bands' %}">View bands</a><br>
     {% endif %}
     {% if user|can:'view_edit_all_shifts' %}
-        <a href="{% url 'shifts' %}">view and edit shifts</a><br>
+        <a href="{% url 'shifts' %}">View and edit shifts</a><br>
     {% endif %}
       </div>
     </div>
