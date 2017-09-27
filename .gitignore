@@ -32,3 +32,6 @@
 
 ### Django ###
 *.pyc
+
+## Hide DB
+db.sqlite3
