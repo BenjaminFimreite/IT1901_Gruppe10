@@ -31,3 +31,9 @@ class Booking(models.Model):
 
 	
 
+class BandInfo (models.Model) :
+	band = models.ForeignKey(Band, on_delete=models.CASCADE)
+	StreamCount = models.CharField(max_length = 250)
+	Visits =models.CharField(max_length = 500)
+	def _str_(self):
+		return self.band.bandName + self.StreamCount + self.Visits

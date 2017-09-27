@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
+from .models import BandInfo
+from django.template import RequestContext
+from django.shortcuts import render_to_response
 
 from .models import Booking
 from .models import Scene
@@ -57,3 +60,9 @@ def view_booking(request, booking_id):
 	   'booking': booking,
 	}
 	return HttpResponse(template.render(context, request))
+
+
+
+def view_bands (request):
+
+
