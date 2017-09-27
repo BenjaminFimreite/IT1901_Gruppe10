@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^send_email$', views.send_email, name="sendemail"),
     url(r'^sentbooking$', TemplateView.as_view(template_name='sentbooking.html'), name="sentbooking"),
 	url(r'^concert_overview$', views.concert_overview, name='concert_overview'),
+
 ]

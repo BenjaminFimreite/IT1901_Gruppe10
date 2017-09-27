@@ -9,8 +9,13 @@ from .forms import *
 
 
 # Create your views here.
-#def addBookingInDb(request):
-
+def pending_bookings():
+	bookings =  Booking.objects.get(approvedBookingBoss=false)
+	template = loader.get_template('pending_bookings.html')
+	context = {
+	   'bookings': bookings
+	}
+	return HttpResponse(template.render(context, request))
 
 def send_email(request):
 	manager = request.POST.get('name')
@@ -24,7 +29,7 @@ def send_email(request):
 			send_mail(subject, msg, sender, [manager])
 		except BadHeaderError:
 			return HttpResponse('Invalid header found')
-		return HttpResponseRedirect('/sentbooking')
+		return HttpResponseRedirect('/pending_bookings')
 	else:
 		return HttpResponse('Make sure all fields are entered and valid.')
 
@@ -48,7 +53,7 @@ def create_booking2(request):
 		if form.is_valid():
 			# process the data in form.cleaned_data as required
 			print(form.cleaned_data)	# a dictionary
-			b_form = Booking()
+			b_form = Booking()	# lager ny booking
 			if form.cleaned_data["bandName"] != "":
 				band_temp = Band()
 				band_temp.bandName = form.cleaned_data["bandName"]
@@ -59,6 +64,7 @@ def create_booking2(request):
 			b_form.date = form.cleaned_data["date"]
 			b_form.pris = form.cleaned_data["price"]
 			b_form.scene = form.cleaned_data["scene"]
+			b_form.managerEmail = form.cleaned_data["managerEmail"]
 
 			b_form.save()
 			# redirect to a new URL:
