@@ -71,14 +71,23 @@ def create_booking2(request):
 		form = CreateBookingForm()
 
 	context = {
-		'form' : form,
+		'form' : form
     }
 	return HttpResponse(template.render(context, request))
+
 
 def shifts(request):
 	bookings = Booking.objects.all()
 	user = request.user
 	user_bookings = []
+	template = loader.get_template('shifts.html')
+
+	if request.method == 'POST':
+		form = AddShiftForm(request.POST)
+#		if form.is_valid():
+	#		break
+	else:
+		form = AddShiftForm()
 
 	for booking in bookings:
 		if user in booking.technicians.all():
@@ -86,8 +95,8 @@ def shifts(request):
 
 	print(user_bookings)
 
-	template = loader.get_template('shifts.html')
 	context = {
+		'form' : form,
 	 	'bookings': bookings,
 		'user_bookings' : user_bookings,
 	}

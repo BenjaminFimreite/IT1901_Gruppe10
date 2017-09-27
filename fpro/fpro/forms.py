@@ -13,3 +13,7 @@ class CreateBookingForm(forms.Form):
 
 class ConsiderBookingForm(forms.Form):
 	accepted = forms.BooleanField()
+
+class AddShiftForm(forms.Form):
+	technician = forms.ModelChoiceField(queryset=User.objects, label="Choose technician", required=True)
+	booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking", required=True)

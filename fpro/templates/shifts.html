@@ -9,8 +9,16 @@
 
   <!--Dette vises for arrangøren-->
   {% if user|can:'view_edit_all_shifts' %}
+  <h4>Here you can add and edit working shifts</h4>
+    <div id="edit_shit">
+      <form>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add" />
+      </form>
+
+    </div>
     <div id="shits">
-      <h4>Here you can add and edit working shifts</h4>
       <p>List of registered shifts</p>
       <ul>
         {% for booking in bookings %}
