@@ -5,8 +5,12 @@
 
 {% load permission_tags %}
 {% block content %}
-  <h2>Create a booking</h2>
-  {% load permission_tags %}
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item active">Create Booking</li>
+</ol>
+
+{% load permission_tags %}
 
 	{% for b in bookings %}
         <li><p>{{ b }}</p></li>

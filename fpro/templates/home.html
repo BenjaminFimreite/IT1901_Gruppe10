@@ -3,15 +3,21 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<ol class="breadcrumb">
-    <li class="breadcrumb-item active">Home</li>
-</ol>
 
-{% load permission_tags %}
-    {% if user|can:'send_bookingoffer' %}
-        <a href="{% url 'create_booking' %}">create a booking</a>
-    {% endif %}
-    {% if user|can:'view_my_shift' %}
-        <a href="{% url 'shifts' %}">view shifts</a>
-    {% endif %}
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Home</li>
+  </ol>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+  {% load permission_tags %}
+      {% if user|can:'send_bookingoffer' %}
+          <a href="{% url 'create_booking' %}">create a booking</a>
+      {% endif %}
+      {% if user|can:'view_my_shift' %}
+          <a href="{% url 'shifts' %}">view shifts</a>
+      {% endif %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
