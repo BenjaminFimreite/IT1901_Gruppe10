@@ -1,41 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<<<<<<< HEAD
-{% block title %}Booking{% endblock %}
-
-{% load permission_tags %}
-{% block content %}
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item active">Create Booking</li>
-</ol>
-
-{% load permission_tags %}
-
-  #vis bookingene som er hentet fra database her
-  <h2>Godkjenn booking(er)</h2>
-
-    <!-- Må iterere gjennom alle bookingobjektene før du skriver ut noe  -->
-
-      for all b in bookings:
-      
-    {{ b.form.managerEmail }}
-    {{ b.form.pris }}
-    {{ b.form.scene }}
-    {{ b.form.date }}
-    <input type='submit' value='Godkjenn tilbud'/>
-
-
-
-
-
-  {% if user|can:'approve_bookingoffer' %}
-  {% else %}
-      <script language="javascript">window.location.href = "/"</script>
-  {% endif %}
-
-=======
 {% load permission_tags %}
 
 {% block content %}
@@ -62,5 +27,4 @@
 		{% endif %}
 		<img src="{% static "img/heart.png" %}" alt="hjerte">
 	</div>
->>>>>>> 445ccef5ef17c8161b1e15949cccae60cd85646c
 {% endblock %}
