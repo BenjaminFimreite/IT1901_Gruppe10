@@ -11,8 +11,6 @@ class CreateBookingForm(forms.Form):
 	price = forms.DecimalField(label="Price")
 	scene = forms.ModelChoiceField(queryset=Scene.objects)
 
-class ConsiderBookingForm(forms.Form):
-	accepted = forms.BooleanField()
 
 class AddShiftForm(forms.Form):
 	technician = forms.ModelChoiceField(queryset=User.objects, label="Choose technician", required=True)

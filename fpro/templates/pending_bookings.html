@@ -6,18 +6,20 @@
 {% block content %}
 <ol class="breadcrumb">
  <li class="breadcrumb-item"><a href="/">Home</a></li>
- <li class="breadcrumb-item active">Bookings</li>
+ <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
+ <li class="breadcrumb-item active">Pending Bookings</li>
 </ol>
 
 	<div id="pending_bookings">
 		{% if user|can:'view_bookings' %}
-		<p>TODO: Her skal man kunne godkjenner eller avslå booking, knapper er foreløpig linka til details</p>
 
 		<h1>Pending Bookings</h1>
 		{% for b in pending_bookings_array %}
 		<li>{{ b }}
-			<button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">Accept Bookingoffer</button>
-			<button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">Decline Bookingoffer</button>
+			<br>
+			<button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
+			<button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
+			<br><p></p>
 		</li>
 		{% endfor %}
 		{% else %}

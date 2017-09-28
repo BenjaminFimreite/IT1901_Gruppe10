@@ -4,14 +4,14 @@
 {% load permission_tags %}
 
 {% block content %}
-<ol class="breadcrumb">  
+<ol class="breadcrumb">
    <li class="breadcrumb-item"><a href="/">Home</a></li>
    <li class="breadcrumb-item active">Overview</li>
 </ol>
 
 <div id="concert_overview">
     {% if user|can:'view_concerts' %}
-    
+
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
@@ -26,11 +26,11 @@
     <div class="tab-content">
         <div class="tab-pane active" id="home" role="tabpanel">
             <h2>Concerts @ scenes</h2>
-            {% for e in bookings_array.keys %}
-            <p><b>Scene: {{e}}</b></p>
+            {% for scene in bookings_array.keys %}
+            <p><b>{{scene}}</b></p>
             <ul>
                 {% for b in bookings %}
-                {% if b.scene == e %}
+                {% if b.scene == scene and b.approvedBookingBoss %}
                 <li>
                     {{b}}
                     <ul> <b>Working tech crew</b>
@@ -43,11 +43,19 @@
                 {% endfor %}
             </ul>
             {% endfor %}
-            {% endif %}</div>
+					</div>
         <div class="tab-pane" id="archive" role="tabpanel">
             <!-- Edit this -->
-            ...
+						<h2>Concert Archive</h2>
+            <ul>
+                {% for b in past_bookings %}
+                <li>
+                    {{b}}
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
+		{% endif %}
 </div>
 {% endblock %}

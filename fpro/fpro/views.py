@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from .models import Booking, Scene, Band
 from .forms import *
 
-import datetime
+from datetime import datetime
 
 # Create your views here.
 #def addBookingInDb(request):
@@ -124,16 +124,31 @@ def booking(request, booking_id):
 def pending_bookings(request):
 	bookings = Booking.objects.all()
 
-	pending_bookings_array = []
+	# Lag array med alle pending bookings (ikke godkjent av bookingsjef)
+	print(request.GET.get("value", ""))
+	print(request.GET.get("booking", ""))
+	if request.GET.get("value", "") == "accepted" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
+		booking = Booking.objects.get(id=request.GET.get("booking", ""))
+		booking.approvedBookingBoss = True
+		booking.save()
+		return HttpResponseRedirect("/bookings/pending_bookings")
+	elif request.GET.get("value", "") == "declined" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
+		booking = Booking.objects.get(id=request.GET.get("booking", ""))
+		booking.delete()
+		return HttpResponseRedirect("/bookings/pending_bookings")
+	elif request.GET.get("value", "") == "declined" or request.GET.get("value", "") == "accepted":
+		return HttpResponseRedirect("/bookings/pending_bookings")
 
+
+	pending_bookings_array = []
 	for booking in bookings:
 		if not booking.approvedBookingBoss:
 			pending_bookings_array += [booking]
 
 	template = loader.get_template('pending_bookings.html')
 	context = {
-	   'bookings': bookings,
-	   'pending_bookings_array' : pending_bookings_array,
+	  	'bookings': bookings,
+	  	'pending_bookings_array' : pending_bookings_array,
 	}
 
 	return HttpResponse(template.render(context, request))
@@ -158,18 +173,24 @@ def band(request, band_id):
 def overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
-	bookings_array = {}
+	coming_bookings = {}
+	past_bookings = []
 	for scene in scenes:
 		for booking in bookings:
-			if booking.scene == scene:
-				bookings_array[scene] = []
-				bookings_array[scene] += [booking]
+			if booking.scene == scene and booking.approvedBookingBoss and booking.date >= datetime.now().date():
+				coming_bookings[scene] = []
+				coming_bookings[scene] += [booking]
+	for booking in bookings:
+		if booking.approvedBookingBoss and booking.date < datetime.now().date():
+			past_bookings += [booking]
+
 
 	template = loader.get_template("overview.html")
 	context = {
+		'past_bookings' : past_bookings,
 		'scenes' : scenes,
 	  	'bookings': bookings,
-		'bookings_array': bookings_array,
+		'bookings_array': coming_bookings,
 	}
 
 	return HttpResponse(template.render(context, request))
