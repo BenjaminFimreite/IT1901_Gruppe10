@@ -29,7 +29,6 @@ class Booking(models.Model):
 	def __str__(self):
                 return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
 
-	
 
 class BandInfo (models.Model) :
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)

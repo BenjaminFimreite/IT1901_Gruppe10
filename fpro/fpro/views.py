@@ -127,11 +127,13 @@ def pending_bookings(request):
 	# Lag array med alle pending bookings (ikke godkjent av bookingsjef)
 	print(request.GET.get("value", ""))
 	print(request.GET.get("booking", ""))
+	# Booking accepted
 	if request.GET.get("value", "") == "accepted" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
 		booking = Booking.objects.get(id=request.GET.get("booking", ""))
 		booking.approvedBookingBoss = True
 		booking.save()
 		return HttpResponseRedirect("/bookings/pending_bookings")
+	# Booking declined
 	elif request.GET.get("value", "") == "declined" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
 		booking = Booking.objects.get(id=request.GET.get("booking", ""))
 		booking.delete()
