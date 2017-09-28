@@ -30,7 +30,7 @@
             <p><b>{{scene}}</b></p>
             <ul>
                 {% for b in bookings %}
-                {% if b.scene == scene and b.approvedBookingBoss %}
+                {% if b.scene == scene and b.approvedBookingBoss and b.approvedManager %}
                 <li>
                     {{b}}
                     <ul> <b>Working tech crew</b>

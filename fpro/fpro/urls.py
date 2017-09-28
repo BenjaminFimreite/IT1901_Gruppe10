@@ -17,8 +17,6 @@ urlpatterns = [
 	url(r'^bookings/pending_bookings$', views.pending_bookings, name="pending_bookings"),
     url(r'^send_email$', views.send_email, name="sendemail"),
     url(r'^sentbooking$', TemplateView.as_view(template_name='sentbooking.html'), name="sentbooking"),
-    url(r'^view_bands$', views.view_bands, name = "view_bands"),
-	url(r'^concert_overview$', views.concert_overview, name='concert_overview'),
     url(r'^bands$', views.bands, name="bands"),
 	url(r'^bands/band/(?P<band_id>[0-9]+)/$', views.band, name="band"),
 	url(r'^overview$', views.overview, name='overview'),

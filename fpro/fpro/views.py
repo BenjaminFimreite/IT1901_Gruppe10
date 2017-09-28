@@ -13,22 +13,25 @@ from .forms import *
 from datetime import datetime
 
 # Create your views here.
-def pending_bookings():
-	bookings =  Booking.objects.get(approvedBookingBoss=false)
-	template = loader.get_template('pending_bookings.html')
-	context = {
-	   'bookings': bookings
-	}
-	return HttpResponse(template.render(context, request))
+#def pending_bookings():
+#	bookings =  Booking.objects.get(approvedBookingBoss=false)
+#	template = loader.get_template('pending_bookings.html')
+#	context = {
+#	   'bookings': bookings
+#	}
+#	return HttpResponse(template.render(context, request))
 
-def send_email(request):
-	manager = request.POST.get('name')
-	comment = request.POST.get('comment')
-	price = request.POST.get('price')
-	msg = "Prisforslag: " + price + "\n" + "Kommentar: " + comment
+def send_email(booking):
+	print("hei")
+	manager = booking.managerEmail #request.POST.get('name')
+	price = booking.pris #request.POST.get('price')
+	date = booking.date
+	band = booking.band
+	scene = booking.scene
+	msg = "Prisforslag: " + str(price) + "\n" + "Dato:" + str(date) + "\n" + str(band) + "\n" +  str(scene)
 	sender = 'fpro.no'
 	subject = 'Bookingtilbud'
-	if comment and manager:
+	if price and manager:
 		try:
 			send_mail(subject, msg, sender, [manager])
 		except BadHeaderError:
@@ -136,6 +139,7 @@ def pending_bookings(request):
 	if request.GET.get("value", "") == "accepted" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
 		booking = Booking.objects.get(id=request.GET.get("booking", ""))
 		booking.approvedBookingBoss = True
+		send_email(booking)
 		booking.save()
 		return HttpResponseRedirect("/bookings/pending_bookings")
 	elif request.GET.get("value", "") == "declined" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
@@ -151,10 +155,16 @@ def pending_bookings(request):
 		if not booking.approvedBookingBoss:
 			pending_bookings_array += [booking]
 
+	approved_by_bookingboss = []
+	for booking in bookings:
+		if booking.approvedBookingBoss and not booking.approvedManager:
+			approved_by_bookingboss += [booking]
+
 	template = loader.get_template('pending_bookings.html')
 	context = {
 	  	'bookings': bookings,
 	  	'pending_bookings_array' : pending_bookings_array,
+		'approved_by_bookingboss' : approved_by_bookingboss,
 	}
 
 	return HttpResponse(template.render(context, request))
@@ -182,9 +192,10 @@ def overview(request):
 	coming_bookings = {}
 	past_bookings = []
 	for scene in scenes:
+		coming_bookings[scene] = []
 		for booking in bookings:
-			if booking.scene == scene and booking.approvedBookingBoss and booking.date >= datetime.now().date():
-				coming_bookings[scene] = []
+			if (booking.scene == scene) and booking.approvedManager and booking.approvedBookingBoss and booking.date >= datetime.now().date():
+				#coming_bookings[scene] = []
 				coming_bookings[scene] += [booking]
 	for booking in bookings:
 		if booking.approvedBookingBoss and booking.date < datetime.now().date():
