@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<<<<<<< HEAD
 {% block title %}Booking{% endblock %}
 
 {% load permission_tags %}
@@ -34,4 +35,32 @@
       <script language="javascript">window.location.href = "/"</script>
   {% endif %}
 
+=======
+{% load permission_tags %}
+
+{% block content %}
+<ol class="breadcrumb">
+ <li class="breadcrumb-item"><a href="/">Home</a></li>
+ <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
+ <li class="breadcrumb-item active">Pending Bookings</li>
+</ol>
+
+	<div id="pending_bookings">
+		{% if user|can:'view_bookings' %}
+
+		<h1>Pending Bookings</h1>
+		{% for b in pending_bookings_array %}
+		<li>{{ b }}
+			<br>
+			<button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
+			<button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
+			<br><p></p>
+		</li>
+		{% endfor %}
+		{% else %}
+			<script language="javascript">window.location.href = "/"</script>
+		{% endif %}
+		<img src="{% static "img/heart.png" %}" alt="hjerte">
+	</div>
+>>>>>>> 445ccef5ef17c8161b1e15949cccae60cd85646c
 {% endblock %}
