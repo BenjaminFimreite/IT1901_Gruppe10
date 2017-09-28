@@ -26,9 +26,17 @@
               <a class="nav-link" href="#">Hallaisen</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="{% url 'logout' %}">
-             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">logout <i class="fa fa-sign-out" aria-hi    dden="true"></i></button>
-          </form>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> {{ user.username }}</button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout'  %}"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a>
+              </div>
+          </div>
         </div>
       </nav>
     </header>
