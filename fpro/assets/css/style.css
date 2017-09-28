@@ -1,8 +1,44 @@
+.overskrift {
+	margin-top: 3%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.submitbutton {
+	border-radius: 4px;
+	background-color: #cccccc;
+	transition-duration: 0.35s;
+}
+
+.submitbutton:hover{
+	background-color: #d9d9d9;
+}
+
+input {
+	border-radius: 3px;
+}
+
+input [type=date] {
+	border-radius: 3px;
+}
+
+input:focus {
+	outline: none;
+	border: 2px solid #555;
+}
 
 /* Home */
 #home a {
 	margin-left: 25px;
 }
+
+/* Create booking */
+#create_booking_form {
+	margin-left: 2%;
+	font-family: 'Quicksand', sans-serif;
+}
+
 
 /* View Bookings */
 
@@ -34,4 +70,3 @@
 #view_booking p{
 	color: lightgray;
 }
-
