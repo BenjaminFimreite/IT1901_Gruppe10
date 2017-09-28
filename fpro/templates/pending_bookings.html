@@ -17,11 +17,21 @@
 		{% for b in pending_bookings_array %}
 		<li>{{ b }}
 			<br>
-			<button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
-			<button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
+        <form action="send_email" method="post">
+          <button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
+        </form>
+          <button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
 			<br><p></p>
 		</li>
+
+
 		{% endfor %}
+
+    <h1>Bookings approved by bookingboss</h1>
+    {% for x in approved_by_bookingboss %}
+    <li>{{ x }}<br></li>
+    {% endfor %}
+
 		{% else %}
 			<script language="javascript">window.location.href = "/"</script>
 		{% endif %}

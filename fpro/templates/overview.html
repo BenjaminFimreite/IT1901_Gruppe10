@@ -4,6 +4,10 @@
 {% load permission_tags %}
 
 {% block content %}
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+
 <ol class="breadcrumb">
    <li class="breadcrumb-item"><a href="/">Home</a></li>
    <li class="breadcrumb-item active">Overview</li>
@@ -25,23 +29,33 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane active" id="home" role="tabpanel">
-            <h2>Concerts @ scenes</h2>
+            <h2 class="overskrift">Concerts @ scenes</h2>
+
+            <table id="tableoverskrift" class="overviewtable">
+                <th class="date">Date</th>
+                <th class="band">Band<th>
+                <th class="scene">Scene<th>
+                <th class=technicians>Technicians<th>
+                <th>Technical Needs<th>
+            </table>
+
             {% for scene in bookings_array.keys %}
-            <p><b>{{scene}}</b></p>
-            <ul>
                 {% for b in bookings %}
-                {% if b.scene == scene and b.approvedBookingBoss %}
-                <li>
-                    {{b}}
-                    <ul> <b>Working tech crew</b>
-                        {% for tech in b.technicians.all %}
-                        <li>{{tech}}</li>
-                        {% endfor %}
-                    </ul>
-                </li>
+                {% if b.scene == scene and b.approvedBookingBoss and b.approvedManager %}
+                <div class="overviewtable">
+                  <table>
+                    <tr>
+                      <th class="date">{{b.date}}</th>
+                      <th class="band">{{b.band}}<th>
+                      <th class="scene">{{b.scene}}<th>
+                      <th class=technicians>{{b.technicians}}<th>
+                      <th>{{c.technicalRequirements}}<th>
+                    </tr>
+                  </table>
+                </div>
                 {% endif %}
                 {% endfor %}
-            </ul>
+
             {% endfor %}
 					</div>
         <div class="tab-pane" id="archive" role="tabpanel">
