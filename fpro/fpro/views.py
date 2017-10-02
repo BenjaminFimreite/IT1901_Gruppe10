@@ -213,3 +213,11 @@ def overview(request):
 	}
 
 	return HttpResponse(template.render(context, request))
+
+def send_techneeds(request):
+    bookings = Booking.objects.all()
+    template = loader.get_template("send_techneeds.html")
+    context = {
+        'bookings': bookings,
+    }
+    return HttpResponse(template.render(context, request))

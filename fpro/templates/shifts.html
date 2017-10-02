@@ -4,79 +4,79 @@
 
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item active">Shifts</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Shifts</li>
 </ol>
 
-  {% load permission_tags %}
-	<p>Logged in as user: {{user}}</p>
+{% load permission_tags %}
+<p>Logged in as user: {{user}}</p>
 
-  <!--Dette vises for arrangøren-->
-  {% if user|can:'view_edit_all_shifts' %}
-  <h4>Here you can manage working shifts</h4>
-    <div id="edit_shit">
-      <form>
+<!--Dette vises for arrangøren-->
+{% if user|can:'view_edit_all_shifts' %}
+<h4>Here you can manage working shifts</h4>
+<div id="edit_shit">
+    <form>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Add" />
-      </form>
-    </div>
+    </form>
+</div>
 
-    <br><br>
+<br><br>
 
-    </div>
-    <div id="shits">
-      <h3>List of registered shifts</h3>
 
-      <table class="table table-striped">
+<div id="shits">
+    <h3>List of registered shifts</h3>
+
+    <table class="table table-striped">
         <thead>
-          <tr>
-            <th>#</th>
-            <th>Booking</th>
-            <th>technicians</th>
-          </tr>
+            <tr>
+                <th>#</th>
+                <th>Booking</th>
+                <th>technicians</th>
+            </tr>
         </thead>
 
         <tbody>
-          {% for booking in bookings %}
-          <tr>
-            <th>{{forloop.counter}}</th>
-            <td>{{booking}}</td>
-            {% for technician in booking.technicians.all %}
-            <td>{{technicians}}</td>
+            {% for booking in bookings %}
+            <tr>
+                <th>{{forloop.counter}}</th>
+                <td>{{booking}}</td>
+                {% for technician in booking.technicians.all %}
+                <td>{{technicians}}</td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-          </tr>
-          {% endfor %}
         </tbody>
-      </table>
-    </div>
-  <br><br><br>
-  {% endif %}
-
-  <!--Dette vises for teknikerne-->
-  {% if user|can:'view_my_shifts' %}
-  <h3>You are working at the following concerts: </h3>
-  <div>
-    <table class="table talbe-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Concert</th>
-          <th>Technical requirements</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {% for booking in user_bookings %}
-        <tr>
-          <th>{{forloop.counter}}</th>
-          <td>{{booking}}</td>
-          <!--Henter ut spesifike krav til bookingen-->
-          <td>{{booking.technicalRequirements}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
     </table>
-  </div>
-  {% endif %}
-  {% endblock %}
+</div>
+<br><br><br>
+{% endif %}
+
+<!--Dette vises for teknikerne-->
+{% if user|can:'view_my_shifts' %}
+<h3>You are working at the following concerts: </h3>
+<div>
+    <table class="table talbe-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Concert</th>
+                <th>Technical requirements</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for booking in user_bookings %}
+            <tr>
+                <th>{{forloop.counter}}</th>
+                <td>{{booking}}</td>
+                <!--Henter ut spesifike krav til bookingen-->
+                <td>{{booking.technicalRequirements}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}
