@@ -48,7 +48,7 @@
                     <table class="table table-striped table-responsive">
                       <tr>
                         <th class="rad">{{b.date}}</th>
-                        <th class="band">{{b.band}}<th>
+                        <th class="band">{{b.band.bandName}}<th>
                         <th class="rad">{{b.scene}}<th>
                         <th class="rad">{{b.technicians}}<th>
                       </tr>
@@ -81,7 +81,10 @@
                       <th>Band</th>
                       <th>Date</th>
                       <th>Tickets sold</th>
-                      <th>Cost</th>
+                      <th>Total cost</th>
+											<th>Band cost</th>
+											<th>Other costs</th>
+											<th>Ticket cost</th>
                       <th>Earnings</th>
                     </tr>
                   </thead>
@@ -93,9 +96,12 @@
                       <th>{{forloop.counter}}</th>
                       <td>{{b.band}}</td>
                       <td>{{b.date}}</td>
-                      <td></td>
-                      <td>15000</td>
-                      <td>{{b.pris}}</td>
+                      <td>{{b.ticketsSold}}</td>
+                      <td>{{b.totalCost}}</td>
+											<td>{{b.bandPrice}}</td>
+											<td>{{b.otherCosts}}</td>
+                      <td>{{b.ticketPrice}}</td>
+											<td>{{b.totalCostResult}}</td>
                     </tr>
                     {% endif %}
                     {% endfor %}
