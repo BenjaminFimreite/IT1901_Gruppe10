@@ -13,7 +13,7 @@
 		{% if user|can:'search_band' %}
 		<h1>View Bands</h1>
 		{% for b in bands %}
-		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See Details</button></li>
+		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See band information</button></li>
 		{% endfor %}
 		{% else %}
 			<script language="javascript">window.location.href = "/"</script>
