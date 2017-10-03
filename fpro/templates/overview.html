@@ -61,15 +61,48 @@
           </div>
         <div class="tab-pane" id="archive" role="tabpanel">
             <!-- Edit this -->
-						<h2>Concert Archive</h2>
-            <ul>
-                {% for b in past_bookings %}
-                <li>
-                    {{b}}
-                </li>
+
+            <ul class="nav nav-tabs" role="tablist">
+              {% for scene in scenes %}
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#{{ forloop.counter }}" role="tab">{{scene}}</a>
+              </li>
                 {% endfor %}
             </ul>
-        </div>
+            <div class="tab-content">
+
+              {% for scene in scenes %}
+              <div class="tab-pane" id="{{ forloop.counter }}" role="tabpanel">
+                <h2 class="overskrift">Past concerts at {{scene}}</h2>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Band</th>
+                      <th>Date</th>
+                      <th>Tickets sold</th>
+                      <th>Cost</th>
+                      <th>Earnings</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {% for b in past_bookings %}
+                    {% if b.scene == scene %}
+                    <tr>
+                      <th>{{forloop.counter}}</th>
+                      <td>{{b.band}}</td>
+                      <td>{{b.date}}</td>
+                      <td></td>
+                      <td>15000</td>
+                      <td>{{b.pris}}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              {% endfor %}
     </div>
 		{% endif %}
 </div>
