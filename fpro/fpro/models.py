@@ -12,11 +12,12 @@ class Scene(models.Model):
 
 class Band(models.Model):
         bandName = models.CharField(max_length=100)
-        StreamCount = models.CharField(default = '', max_length = 250)
-        Visits = models.CharField(default = '', max_length = 500)
+        StreamCount = models.IntegerField(default = 0)
+        Visits = models.IntegerField(default = 0)
+        Genre = models.CharField(max_length = 500, default="")
 
         def __str__(self):
-                return self.bandName + self.StreamCount + self.Visits
+                return self.bandName + str(self.StreamCount) + str(self.Visits) + self.Genre
 
 class Booking(models.Model):
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)
