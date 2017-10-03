@@ -15,3 +15,7 @@ class CreateBookingForm(forms.Form):
 class AddShiftForm(forms.Form):
 	technician = forms.ModelChoiceField(queryset=User.objects, label="Choose technician", required=True)
 	booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking", required=True)
+    
+
+class SendTechneedsForm(forms.Form):
+    techNeeds = forms.CharField(label="Specify your technical needs", max_length=100, required=True)

@@ -1,5 +1,4 @@
 .overskrift {
-	margin-top: 3%;
 	margin-left: 2%;
 	margin-bottom: 2%;
 	font-family: 'Quicksand', sans-serif;
@@ -28,40 +27,32 @@ input:focus {
 	border: 2px solid #555;
 }
 
+
+
 /* Overview */
 .tab-content {
 	font-family: 'Quicksand', sans-serif;
 }
 
-.overviewtable {
-	list-style-position:inside;
-  border: 1px solid black;
-	list-style-type: none;
-	margin-left: 5%;
-	width: 80%
+#tabell {
+	width: 75%;
+	margin-left: 3%;
 }
 
-#tableoverskrift {
-	background-color: #499b9c;
-	color: #f2f2f2;
-	font-size: 120%;
-	border:1px solid black
-}
-
-.date {
-	width: 160px;
+.rad {
+	width: 14%;
 }
 
 .band {
-	width: 350px;
+	width: 27%;
 }
 
-.scene {
-	width: 140px;
-}
 
-.technicians {
-	width: 160px;
+
+#tabelltopp {
+	background-color: #7d5454;
+	color: #f2f2f2;
+	font-size: 115%;
 }
 
 /* Home */
@@ -71,8 +62,23 @@ input:focus {
 
 /* Create booking */
 #create_booking_form {
-	margin-left: 2%;
 	font-family: 'Quicksand', sans-serif;
+}
+
+#boks{
+	padding-bottom: 7%;
+	width: 100%;
+}
+
+#boksrundtform {
+	text-align: center;
+}
+
+#bilde {
+	position: absolute;
+	opacity: 0.2;
+	width: 100%;
+	z-index: -1;
 }
 
 
