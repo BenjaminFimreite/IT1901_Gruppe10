@@ -26,11 +26,19 @@ class Booking(models.Model):
 	approvedManager = models.BooleanField(default=False)
 	technicalRequirements = models.CharField(max_length=100, blank=True, default="")
 	scene = models.ForeignKey(Scene, on_delete=models.CASCADE, blank=True)
-	pris = models.DecimalField(max_digits=30, decimal_places=2)
+	ticketPrice = models.DecimalField(max_digits=30, decimal_places=2)
 	technicians = models.ManyToManyField(User, blank=True)
 	managerEmail = models.CharField(max_length=100, blank=True)
+	# ticketPrice = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
+	bandPrice = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
+	otherCosts = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
+	ticketsSold = models.IntegerField(default = 0)
+
+	def totalCostResult(self):
+		return self.ticketPrice * self.ticketsSold - self.bandPrice - self.otherCosts
+
+	def totalCost(self):
+		return self.bandPrice + self.otherCosts
 
 	def __str__(self):
                 return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
-
-
