@@ -12,11 +12,18 @@ class Scene(models.Model):
 
 class Band(models.Model):
         bandName = models.CharField(max_length=100)
-        StreamCount = models.CharField(default = '', max_length = 250)
-        Visits = models.CharField(default = '', max_length = 500)
+        StreamCount = models.IntegerField(default = 0)
+        Visits = models.IntegerField(default = 0)
+        Genre = models.CharField(max_length = 500, default="")
 
         def __str__(self):
-                return self.bandName + self.StreamCount + self.Visits
+                return self.bandName + str(self.StreamCount) + str(self.Visits) + self.Genre
+
+class Genre(models.Model):
+	genrename = models.CharField(max_length = 100)
+
+	def __str__(self):
+		return self.genrename
 
 class Booking(models.Model):
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)
@@ -32,6 +39,7 @@ class Booking(models.Model):
 	bandPrice = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
 	otherCosts = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
 	ticketsSold = models.IntegerField(default = 0)
+
 
 	def totalCostResult(self):
 		return self.ticketPrice * self.ticketsSold - self.bandPrice - self.otherCosts

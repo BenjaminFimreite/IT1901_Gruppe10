@@ -1,1 +1,2 @@
 django-role-permissions
+django-widget-tweaks

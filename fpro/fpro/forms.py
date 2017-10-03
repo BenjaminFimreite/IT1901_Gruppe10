@@ -18,4 +18,5 @@ class AddShiftForm(forms.Form):
     
 
 class SendTechneedsForm(forms.Form):
-    techNeeds = forms.CharField(label="Specify your technical needs", max_length=100, required=True)
+    booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking:", required=True)
+    techneeds = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your technical needs:", max_length=100, required=True)

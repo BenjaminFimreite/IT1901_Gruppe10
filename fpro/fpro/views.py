@@ -178,6 +178,13 @@ def bands(request):
 	   'bands': bands,
 	}
 	return HttpResponse(template.render(context, request))
+def genre(request):
+	genres = Genre.objects.all()
+	template = loader.get_template('Genres.html')
+	context = {
+	   'genres': genres,
+	}
+	return HttpResponse(template.render(context, request))
 
 def band(request, band_id):
 	bands = Band.objects.all()
@@ -222,7 +229,25 @@ def overview(request):
 def send_techneeds(request):
     bookings = Booking.objects.all()
     template = loader.get_template("send_techneeds.html")
+    
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+		# create a form instance and populate it with data from the request:
+        form = SendTechneedsForm(request.POST)
+		# check whether it's valid:
+        if form.is_valid():
+			# process the data in form.cleaned_data as required
+            print(form.cleaned_data)	# a dictionary
+            booking = form.cleaned_data["booking"]	# lager ny booking
+            booking.technicalRequirements = form.cleaned_data["techneeds"]
+            booking.save()
+			# redirect to a new URL:
+            return HttpResponse("Techneeds successfully sent")
+	# if a GET (or any other method) we'll create a blank form
+    else:
+        form = SendTechneedsForm()
     context = {
         'bookings': bookings,
+        'form': form,
     }
     return HttpResponse(template.render(context, request))
