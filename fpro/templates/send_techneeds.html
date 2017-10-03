@@ -13,11 +13,17 @@
 {% if user|can:'send_techneeds' %}
 <h4>Here you can send a list of your technical requirements</h4>
 
-<form id="send_techneeds_form" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input class="submitbutton" type="submit" value="Submit" />
-</form>
+<div id="boksrundtform">
+    {% load permission_tags %}
+
+    <form id="send_techneeds_form" method="post">
+        {% csrf_token %}
+        <br>
+        {{ form.as_p }}
+        <input class="submitbutton" type="submit" value="Submit" />
+    </form>
+
+</div>
 
 {% endif %}
 {% endblock %}
