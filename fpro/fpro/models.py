@@ -19,6 +19,12 @@ class Band(models.Model):
         def __str__(self):
                 return self.bandName + str(self.StreamCount) + str(self.Visits) + self.Genre
 
+class Genre(models.Model):
+	genrename = models.CharField(max_length = 100)
+
+	def __str__(self):
+		return self.genrename
+
 class Booking(models.Model):
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)
 	date = models.DateField('date playing')

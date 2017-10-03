@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load permission_tags %}
+
+{% block content %}
+<ol class="breadcrumb">
+ <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+</ol>
+
+	<div id="view_band">
+		{% if user|can:'search_band' %}
+		<h1>View Bands</h1>
+		{% for b in bands %}
+
+        {% endfor %}
+		{% else %}
+			<script language="javascript">window.location.href = "/"</script>
+		{% endif %}
+	</div>
+{% endblock %}

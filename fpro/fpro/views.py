@@ -178,6 +178,13 @@ def bands(request):
 	   'bands': bands,
 	}
 	return HttpResponse(template.render(context, request))
+def genre(request):
+	genres = Genre.objects.all()
+	template = loader.get_template('Genres.html')
+	context = {
+	   'genres': genres,
+	}
+	return HttpResponse(template.render(context, request))
 
 def band(request, band_id):
 	bands = Band.objects.all()
