@@ -2,6 +2,8 @@ from django import forms
 from .models import *
 from django.contrib.auth.models import User
 import datetime
+from .roles import *
+from rolepermissions.checkers import has_permission
 
 class CreateBookingForm(forms.Form):
 	band = forms.ModelChoiceField(queryset=Band.objects, label="Choose band", required=False)
@@ -13,10 +15,16 @@ class CreateBookingForm(forms.Form):
 
 
 class AddShiftForm(forms.Form):
-	technician = forms.ModelChoiceField(queryset=User.objects, label="Choose technician", required=True)
-	booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking", required=True)
+        users = User.objects.all()
+        techs = []
+        for user in users:
+                if has_permission(user, 'view_my_shifts'):
+                        techs.append(user.id)
+        technician = forms.ModelChoiceField(queryset=User.objects.filter(id__in=techs), label="Choose technician", required=True)
+        booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking", required=True)
     
 
 class SendTechneedsForm(forms.Form):
-    booking = forms.ModelChoiceField(queryset=Booking.objects, label="Choose booking:", required=True)
+    booking = forms.ModelChoiceField(queryset=Booking.objects.filter(date__gte = datetime.datetime.now().date()), label="Choose booking:", required=True)
     techneeds = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your technical needs:", max_length=100, required=True)
+    

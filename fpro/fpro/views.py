@@ -238,8 +238,10 @@ def send_techneeds(request):
         if form.is_valid():
 			# process the data in form.cleaned_data as required
             print(form.cleaned_data)	# a dictionary
-            booking = form.cleaned_data["booking"]	# lager ny booking
-            booking.technicalRequirements = form.cleaned_data["techneeds"]
+            booking = form.cleaned_data["booking"]	# henter valgt booking
+            if booking.technicalRequirements is not None:
+                booking.technicalRequirements += '\n'
+            booking.technicalRequirements += form.cleaned_data["techneeds"]
             booking.save()
 			# redirect to a new URL:
             return HttpResponse("Techneeds successfully sent")
