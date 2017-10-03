@@ -14,6 +14,7 @@ class Band(models.Model):
         bandName = models.CharField(max_length=100)
         StreamCount = models.CharField(default = '', max_length = 250)
         Visits = models.CharField(default = '', max_length = 500)
+        Genre = models.CharField(max_length = 500)
 
         def __str__(self):
                 return self.bandName + self.StreamCount + self.Visits

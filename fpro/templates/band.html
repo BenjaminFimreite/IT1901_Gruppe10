@@ -15,7 +15,7 @@
 <div id="view_band">
 	{% if user|can:'search_band' %}
 	<h1>View Band</h1>
-	<p>{{band}}</p>
+	<p>{{band.bandName}}</p>
 	<ul>
 		<li> Visits: {{band.Visits}}</li>
 		<li> StreamCount: {{band.StreamCount}}</li>

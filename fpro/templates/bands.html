@@ -13,11 +13,12 @@
 		{% if user|can:'search_band' %}
 		<h1>View Bands</h1>
 		{% for b in bands %}
-		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See band information</button></li>
+		<p></p>
+		<p></p>
+		<p>&ensp;&ensp;{{ b.bandName }}&ensp; &ensp; <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See band information</button></p>
 		{% endfor %}
 		{% else %}
 			<script language="javascript">window.location.href = "/"</script>
 		{% endif %}
-		<img src="{% static "img/heart.png" %}" alt="hjerte">
 	</div>
 {% endblock %}
