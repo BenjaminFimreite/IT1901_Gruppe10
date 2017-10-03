@@ -11,20 +11,62 @@
 </ol>
 
 	<div id="pending_bookings">
-		{% if user|can:'view_bookings' %}
+    {% if user|can:'view_bookings' %}
 
-		<h1>Pending Bookings</h1>
-		{% for b in pending_bookings_array %}
-		<li>{{ b }}
-			<br>
-			<button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
-			<button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
-			<br><p></p>
-		</li>
-		{% endfor %}
+    <h3>Pending bookings</h3>
+    <!--Table for pending bookings-->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Pending Booking</th>
+          <th>Accept Bookingoffer</th>
+          <th>Decline Bookingoffer</th>
+        </tr>
+      </thead>
+
+      <tbody>
+    		{% for b in pending_bookings_array %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td class="table-active">{{b}}</td>
+          <td class="table-success">
+            <form action="send_email" method="post">
+              <button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
+            </form>
+          </td>
+          <td class="table-danger">
+            <button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
+          </td>
+        </tr>
+    		 {% endfor %}
+      </tbody>
+
+     </table>
+     <br><br><br>
+     <h3>Approved Bookings</h3>
+     <!--Table for approved bookings-->
+     <table class="table">
+       <thead>
+         <tr>
+           <th>#</th>
+           <th>Bookings approved by bookingboss<th>
+         </tr>
+       </thead>
+       <tbody>
+         {% for x in approved_by_bookingboss %}
+         <tr class="table-success">
+           <th scope="row">{{forloop.counter}}</th>
+           <td>{{x}}<td>
+         </tr>
+         {% endfor %}
+       </tbody>
+
+     </table>
+
 		{% else %}
 			<script language="javascript">window.location.href = "/"</script>
 		{% endif %}
-		<img src="{% static "img/heart.png" %}" alt="hjerte">
+		<!--<img src="{% static "img/heart.png" %}" alt="hjerte">-->
 	</div>
 {% endblock %}

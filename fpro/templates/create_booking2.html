@@ -5,14 +5,30 @@
 
 {% load permission_tags %}
 {% block content %}
-  <h2>Create a booking</h2>
-  {% load permission_tags %}
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+  <body>
 
-  <form method="post">
-		{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-  </form>
+    <img id="bilde" src="{% static "img/ingrid.jpg" %}" alt="festival">
+
+    <div id="boks"></div>
+    <div id="boksrundtform">
+      <h2 class="overskrift">Create a booking</h2>
+
+
+      {% load permission_tags %}
+
+      <form id="create_booking_form" method="post">
+    		{% csrf_token %}
+        <br>
+        {{ form.as_p }}
+        <input class="submitbutton" type="submit" value="Submit" />
+      </form>
+
+    </div>
+
+  </body>
 
   {% if user|can:'send_bookingoffer' %}
   {% else %}

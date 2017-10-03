@@ -26,10 +26,10 @@ class Booking(models.Model):
 	technicalRequirements = models.CharField(max_length=100, blank=True, default="")
 	scene = models.ForeignKey(Scene, on_delete=models.CASCADE, blank=True)
 	pris = models.DecimalField(max_digits=30, decimal_places=2)
-	technicians = models.ManyToManyField(User, blank=True)	# filtrer på technicians rolle/rettigheter
+	technicians = models.ManyToManyField(User, blank=True)
+	managerEmail = models.CharField(max_length=100, blank=True)
 
 	def __str__(self):
                 return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
 
-	
 
