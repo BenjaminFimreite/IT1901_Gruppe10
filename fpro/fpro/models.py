@@ -11,21 +11,20 @@ class Scene(models.Model):
                 return self.sceneName
 
 
-# class Genre(models.Model):
-# 		genrename = models.CharField(max_length = 100, blank=True, default="")
-#
-# 		def __str__(self):
-# 				return self.genrename
+class Genre(models.Model):
+		genreName = models.CharField(max_length = 100, blank=True, default="")
+		def __str__(self):
+			return self.genreName
 
 
 class Band(models.Model):
         bandName = models.CharField(max_length=100)
         StreamCount = models.IntegerField(default = 0)
         Visits = models.IntegerField(default = 0)
-        # genre = models.ForeignKey(Genre, null=True, blank=True)
+        genre = models.ForeignKey(Genre, null=True, blank=True)
 
         def __str__(self):
-                return self.bandName + str(self.StreamCount) + str(self.Visits)# + self.Genre
+                return self.bandName
 
 class Booking(models.Model):
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)
