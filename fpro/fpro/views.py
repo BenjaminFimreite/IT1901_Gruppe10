@@ -198,7 +198,7 @@ def band(request, band_id):
 def overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
-	genres = Genre.objects.all()
+	# genres = Genre.objects.all()
 	coming_bookings = {}
 	past_bookings = []
 	for scene in scenes:
@@ -218,7 +218,7 @@ def overview(request):
 		'scenes' : scenes,
 	  	'bookings': bookings,
 		'bookings_array': coming_bookings,
-		'genres' : genres,
+		#'genres' : genres,
 	}
 
 	return HttpResponse(template.render(context, request))
