@@ -14,6 +14,8 @@ NY App:
 Migrate modeller inn i database (SQLite):
 	python3 manage.py makemigrations
 	python3 manage.py migrate
+***merge
+	python3 manage.pu makemigrations --merge
 	
 Shell:
 	python3 manage.py shell		// her kan du gjøre mye rart
