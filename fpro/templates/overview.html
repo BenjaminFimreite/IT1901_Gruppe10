@@ -53,7 +53,12 @@
                         	<th>{{b.date}}</th>
                         	<th>{{b.band.bandName}}<th>
                         	<th>{{b.scene}}<th>
-                        	<th>{{b.technicians}}<th>
+                        	<th>
+														{% for t in b.technicians.all %}
+														{% if forloop.counter0 == 0%} | {% endif %}
+															{{t}} |
+														{% endfor %}
+													<th>
 														<th><button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See details</button></th>
                       	</tr>
                   		{% endif %}

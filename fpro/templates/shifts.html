@@ -42,9 +42,12 @@
             <tr>
                 <th>{{forloop.counter}}</th>
                 <td>{{booking}}</td>
-                {% for technician in booking.technicians.all %}
-                <td>{{technicians}}</td>
-                {% endfor %}
+                <td>
+								{% for t in booking.technicians.all %}
+								{% if forloop.counter0 == 0%} | {% endif %}
+									{{t}} |
+								{% endfor %}
+								</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -72,7 +75,7 @@
                 <th>{{forloop.counter}}</th>
                 <td>{{booking}}</td>
                 <!--Henter ut spesifike krav til bookingen-->
-                <td>{{booking.technicalRequirements}</td>
+                <td>{{booking.technicalRequirements}}</td>
             </tr>
             {% endfor %}
         </tbody>

@@ -24,7 +24,7 @@ from datetime import datetime
 def send_email(booking):
 	print("hei")
 	manager = booking.managerEmail #request.POST.get('name')
-	price = booking.pris #request.POST.get('price')
+	price = booking.bandPrice #request.POST.get('price')
 	date = booking.date
 	band = booking.band
 	scene = booking.scene
@@ -69,9 +69,10 @@ def create_booking2(request):
 			else:
 				b_form.band = form.cleaned_data["band"]
 			b_form.date = form.cleaned_data["date"]
-			b_form.pris = form.cleaned_data["price"]
+			b_form.bandPrice = form.cleaned_data["price"]
 			b_form.scene = form.cleaned_data["scene"]
 			b_form.managerEmail = form.cleaned_data["managerEmail"]
+			b_form.ticketPrice = form.cleaned_data["ticketPrice"]
 
 			b_form.save()
 			# redirect to a new URL:
@@ -229,7 +230,7 @@ def overview(request):
 def send_techneeds(request):
     bookings = Booking.objects.all()
     template = loader.get_template("send_techneeds.html")
-    
+
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
 		# create a form instance and populate it with data from the request:
