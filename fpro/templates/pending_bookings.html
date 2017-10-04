@@ -49,15 +49,17 @@
      <table class="table">
        <thead>
          <tr>
-           <th>#</th>
-           <th>Bookings approved by bookingboss<th>
+            <th>#</th>
+            <th>Bookings approved by bookingboss<th>
+            <th>Status</th>
          </tr>
        </thead>
        <tbody>
          {% for x in approved_by_bookingboss %}
-         <tr class="table-success">
-           <th scope="row">{{forloop.counter}}</th>
-           <td>{{x}}<td>
+         <tr class="table-danger">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{x}}<td>
+            <td>Awaiting manager approval</td>
          </tr>
          {% endfor %}
        </tbody>
