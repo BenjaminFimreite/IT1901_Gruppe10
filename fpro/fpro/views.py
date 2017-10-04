@@ -178,13 +178,7 @@ def bands(request):
 	   'bands': bands,
 	}
 	return HttpResponse(template.render(context, request))
-def genre(request):
-	genres = Genre.objects.all()
-	template = loader.get_template('Genres.html')
-	context = {
-	   'genres': genres,
-	}
-	return HttpResponse(template.render(context, request))
+
 
 def band(request, band_id):
 	bands = Band.objects.all()
@@ -203,6 +197,7 @@ def band(request, band_id):
 def overview(request):
 	bookings = Booking.objects.all()
 	scenes = Scene.objects.all()
+	genres = Genre.objects.all()
 	coming_bookings = {}
 	past_bookings = []
 	for scene in scenes:
@@ -222,6 +217,7 @@ def overview(request):
 		'scenes' : scenes,
 	  	'bookings': bookings,
 		'bookings_array': coming_bookings,
+		'genres' : genres,
 	}
 
 	return HttpResponse(template.render(context, request))

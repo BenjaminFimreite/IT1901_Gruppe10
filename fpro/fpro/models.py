@@ -14,16 +14,17 @@ class Band(models.Model):
         bandName = models.CharField(max_length=100)
         StreamCount = models.IntegerField(default = 0)
         Visits = models.IntegerField(default = 0)
-        Genre = models.CharField(max_length = 500, default="")
+        Genre = Genre.genrename(max_length = 500, default = "")
+
 
         def __str__(self):
                 return self.bandName + str(self.StreamCount) + str(self.Visits) + self.Genre
 
 class Genre(models.Model):
-	genrename = models.CharField(max_length = 100)
+		genrename = models.CharField(max_length = 100)
 
-	def __str__(self):
-		return self.genrename
+		def __str__(self):
+				return self.genrename
 
 class Booking(models.Model):
 	band = models.ForeignKey(Band, on_delete=models.CASCADE)
@@ -32,7 +33,7 @@ class Booking(models.Model):
 	approvedManager = models.BooleanField(default=False)
 	technicalRequirements = models.CharField(max_length=100, blank=True, default="")
 	scene = models.ForeignKey(Scene, on_delete=models.CASCADE, blank=True)
-	ticketPrice = models.DecimalField(max_digits=30, decimal_places=2)
+	ticketPrice = models.DecimalField(max_digits=30, decimal_places=2, default=0)
 	technicians = models.ManyToManyField(User, blank=True)
 	managerEmail = models.CharField(max_length=100, blank=True)
 	# ticketPrice = models.DecimalField(max_digits=30, decimal_places=2, default = 0)
