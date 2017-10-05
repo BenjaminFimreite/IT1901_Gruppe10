@@ -214,8 +214,7 @@ def overview(request):
     for scene in scenes:
         coming_bookings[scene] = []
         for booking in bookings:
-            if (
-                        booking.scene == scene) and booking.approvedManager and booking.approvedBookingBoss and booking.date >= datetime.now().date():
+            if (booking.scene == scene) and booking.approvedManager and booking.approvedBookingBoss and booking.date >= datetime.now().date():
                 # coming_bookings[scene] = []
                 coming_bookings[scene] += [booking]
     for booking in bookings:
