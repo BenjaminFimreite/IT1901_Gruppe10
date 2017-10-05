@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from datetime import datetime
 
 # Create your models here.
 
@@ -47,6 +47,9 @@ class Booking(models.Model):
 
     def totalCost(self):
         return self.bandPrice + self.otherCosts
+
+    def inFuture(self):
+        return self.date >= datetime.now().date()
 
     def __str__(self):
         return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName

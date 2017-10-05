@@ -50,7 +50,7 @@
 								<tbody>
               		{% for scene in bookings_array.keys %}
                   	{% for b in bookings %}
-                  		{% if b.scene == scene and b.approvedBookingBoss and b.approvedManager %}
+                  		{% if b.scene == scene and b.approvedBookingBoss and b.approvedManager and b.inFuture %}
                       	<tr>
                         	<th>{{b.date}}</th>
                         	<th>{{b.band.bandName}}</th>
