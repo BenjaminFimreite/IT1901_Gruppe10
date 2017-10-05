@@ -53,3 +53,7 @@ class Booking(models.Model):
 
     def __str__(self):
         return self.band.bandName + " playing at " + str(self.date) + " at scene " + self.scene.sceneName
+
+class Festival(models.Model):
+	startDate = models.DateField("startDate")
+	endDate = models.DateField("endDate")

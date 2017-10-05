@@ -211,6 +211,8 @@ def overview(request):
     genres = Genre.objects.all()
     coming_bookings = {}
     past_bookings = []
+    festival = Festival.objects.all()[0]
+
     for scene in scenes:
         coming_bookings[scene] = []
         for booking in bookings:
@@ -221,6 +223,13 @@ def overview(request):
         if booking.approvedBookingBoss and booking.date < datetime.now().date():
             past_bookings += [booking]
 
+    totalConsertDates = (festival.endDate - festival.startDate).days
+    dates = set()
+    for b in bookings:
+        dates.add(b.date)
+    freeConsertDates = totalConsertDates - len(dates)
+
+
     template = loader.get_template("overview.html")
     context = {
         'past_bookings': past_bookings,
@@ -228,6 +237,10 @@ def overview(request):
         'bookings': bookings,
         'bookings_array': coming_bookings,
         'genres': genres,
+		'futureBookingsCount' : len(coming_bookings),
+		'festival' : festival,
+		'totalConsertDates' : totalConsertDates,
+		'freeConsertDates' : freeConsertDates,
     }
 
     return HttpResponse(template.render(context, request))

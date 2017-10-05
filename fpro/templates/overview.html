@@ -19,13 +19,10 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home" role="tab">Coming concerts</a></li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#archive" role="tab">Archive</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#genre" role="tab">Archive by Genre</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#archive" role="tab">Archive</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#genre" role="tab">Archive by Genre</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#searchBand" role="tab">Search Band</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#festival" role="tab">Festival overview</a></li>
     </ul>
 
     <!-- Tab panes -->
@@ -178,6 +175,24 @@
 				<div class="tab-pane" id="searchBand" role="tabpanel">
 					<p>to be implemented</p>
 				</div>
+
+				<!-- Festival overview -->
+				<div class="tab-pane" id="festival" role="tabpanel">
+					<p><b>to be implemented</b></p>
+
+					<p>Start Date: {{festival.startDate}}</p>
+					<p>End Date: {{festival.endDate}}</p>
+
+					<p>Total consert dates: {{totalConsertDates}}</p>
+					<p>Free concert dates: {{freeConsertDates}}</p>
+
+					<p>Totalt conserts: {{bookings.count}}</p>
+					<p>Coming Conserts: {{futureBookingsCount}}</p>
+					<p>Offers sent to manager: {{bookings.count}} </p>
+
+				</div>
+
+
 			</div>
 
 			{% endif %}
