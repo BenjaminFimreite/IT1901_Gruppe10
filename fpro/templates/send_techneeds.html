@@ -21,10 +21,11 @@
     <form id="send_techneeds_form" method="post">
         {% csrf_token %}
         <br>
+        
+        <!-- Genererer en form -->
         {% for hidden in form.hidden_fields %}
         {{ hidden }}
         {% endfor %}
-
         {% for field in form.visible_fields %}
         <div class="form-group" style="margin-left: 25px; margin-right: 25px">
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -35,6 +36,7 @@
         </div>
         {% endfor %}
         <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
+        
     </form>
 
 </div>

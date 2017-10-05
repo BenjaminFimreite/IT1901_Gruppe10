@@ -12,60 +12,50 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testApp/views.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fpro/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="315">
+              <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
               <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/website/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testApp/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testApp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding>
-                <element signature="e#641#682#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1507110907469" expanded="true" signature="1674:3632" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3131:3421" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3170:3309" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3327:3421" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3546:3572" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3655:4259" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3870:3904" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="3974:4059" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4102:4199" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4284:4484" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4389:4424" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4520:4838" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4745:4778" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="4871:6579" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="5225:5458" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="5621:5785" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6012:6104" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6167:6288" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6365:6518" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6601:6786" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6697:6726" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6808:6998" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="6907:6938" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7028:7250" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7163:7190" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7275:8176" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7418:7753" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7487:7753" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7655:7753" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7782:7902" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="7971:8115" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="8207:9345" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="8401:9167" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="8589:9167" ph="..." />
+                <marker date="1507110907469" expanded="true" signature="9228:9285" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,10 +78,17 @@
         <option value="$PROJECT_DIR$/website/urls.py" />
         <option value="$PROJECT_DIR$/testApp/views.py" />
         <option value="$PROJECT_DIR$/website/settings.py" />
+        <option value="$PROJECT_DIR$/fpro/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="150" />
     <option name="y" value="23" />
     <option name="width" value="1170" />
@@ -112,75 +109,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -188,24 +125,19 @@
       <recent name="$PROJECT_DIR$/testApp/templates" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Python.views">
-    <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testApp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="website" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testApp/views.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -353,9 +285,24 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.views" />
-    </list>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="website" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testApp/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Python.views" />
@@ -365,25 +312,43 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44092180-e7dd-4cae-9845-cfe3fa5bd983" name="Default" comment="" />
+      <created>1507106553215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507106553215</updated>
+    </task>
+    <servers />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="150" y="23" width="1170" height="873" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24978241" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14947917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -393,59 +358,99 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/website/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#224#233#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding>
-            <element signature="e#641#682#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testApp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testApp/apps.py">
+    <entry file="file://$PROJECT_DIR$/fpro/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1507110907469" expanded="true" signature="1674:3632" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3131:3421" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3170:3309" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3327:3421" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3546:3572" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3655:4259" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3870:3904" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3974:4059" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4102:4199" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4284:4484" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4389:4424" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4520:4838" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4745:4778" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4871:6579" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="5225:5458" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="5621:5785" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6012:6104" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6167:6288" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6365:6518" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6601:6786" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6697:6726" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6808:6998" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6907:6938" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7028:7250" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7163:7190" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7275:8176" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7418:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7487:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7655:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7782:7902" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7971:8115" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8207:9345" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8401:9167" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8589:9167" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="9228:9285" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/settings.py">
+    <entry file="file://$PROJECT_DIR$/website/wsgi.py" />
+    <entry file="file://$PROJECT_DIR$/website/urls.py" />
+    <entry file="file://$PROJECT_DIR$/testApp/urls.py" />
+    <entry file="file://$PROJECT_DIR$/testApp/apps.py" />
+    <entry file="file://$PROJECT_DIR$/testApp/views.py" />
+    <entry file="file://$PROJECT_DIR$/website/settings.py" />
+    <entry file="file://$PROJECT_DIR$/fpro/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1507110907469" expanded="true" signature="1674:3632" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3131:3421" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3170:3309" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3327:3421" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3546:3572" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3655:4259" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3870:3904" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="3974:4059" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4102:4199" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4284:4484" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4389:4424" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4520:4838" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4745:4778" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="4871:6579" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="5225:5458" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="5621:5785" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6012:6104" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6167:6288" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6365:6518" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6601:6786" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6697:6726" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6808:6998" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="6907:6938" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7028:7250" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7163:7190" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7275:8176" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7418:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7487:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7655:7753" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7782:7902" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="7971:8115" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8207:9345" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8401:9167" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="8589:9167" ph="..." />
+            <marker date="1507110907469" expanded="true" signature="9228:9285" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
