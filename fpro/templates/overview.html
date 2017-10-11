@@ -83,7 +83,6 @@
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Band</th>
 											<th>Genre</th>
                       <th>Date</th>
@@ -100,7 +99,6 @@
                     {% for b in past_bookings %}
                     {% if b.scene == scene %}
                     <tr>
-                      <td>{{forloop.counter}}</td>
                       <td>{{b.band}}</td>
 											<td>{{b.band.genre.genreName}}</td>
                       <td>{{b.date}}</td>
@@ -137,7 +135,6 @@
 								<table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>#</th>
                       <th>Band</th>
 											<th>Genre</th>
                       <th>Date</th>
@@ -154,7 +151,6 @@
                     {% for b in past_bookings %}
 	                    {% if b.band.genre == g %}
 		                    <tr>
-		                      <td>{{forloop.counter}}</td>
 		                      <td>{{b.band}}</td>
 													<td>{{b.band.genre.genreName}}</td>
 		                      <td>{{b.date}}</td>
