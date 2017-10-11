@@ -211,7 +211,9 @@ def overview(request):
     genres = Genre.objects.all()
     coming_bookings = {}
     past_bookings = []
-    festival = Festival.objects.all()[0]
+    festival = None
+    if festival:
+        festival = Festival.objects.all()[0]
 
     for scene in scenes:
         coming_bookings[scene] = []
