@@ -225,11 +225,11 @@ def overview(request):
         if booking.approvedBookingBoss and booking.date < datetime.now().date():
             past_bookings += [booking]
 
-    totalConsertDates = (festival.endDate - festival.startDate).days
+    #totalConsertDates = (festival.endDate - festival.startDate).days
     dates = set()
     for b in bookings:
         dates.add(b.date)
-    freeConsertDates = totalConsertDates - len(dates)
+    #freeConsertDates = totalConsertDates - len(dates)
 
 
     template = loader.get_template("overview.html")
@@ -241,8 +241,8 @@ def overview(request):
         'genres': genres,
 		'futureBookingsCount' : len(coming_bookings),
 		'festival' : festival,
-		'totalConsertDates' : totalConsertDates,
-		'freeConsertDates' : freeConsertDates,
+		#'totalConsertDates' : totalConsertDates,
+		#'freeConsertDates' : freeConsertDates,
     }
 
     return HttpResponse(template.render(context, request))
