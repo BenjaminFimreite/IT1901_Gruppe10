@@ -33,7 +33,8 @@
             <tr>
                 <th>#</th>
                 <th>Booking</th>
-                <th>technicians</th>
+                <th>Technical requirements</th>
+                <th>Technicians</th>
             </tr>
         </thead>
 
@@ -42,6 +43,7 @@
             <tr>
                 <th>{{forloop.counter}}</th>
                 <td>{{booking}}</td>
+                <td>{{booking.technicalRequirements}}</td>
                 <td>
 								{% for t in booking.technicians.all %}
 								{% if forloop.counter0 == 0%} | {% endif %}
