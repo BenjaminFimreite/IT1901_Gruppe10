@@ -40,7 +40,7 @@
 
         <tbody>
             {% for booking in bookings %}
-                {% if booking.inFuture %}
+                {% if booking.inFuture and booking.approvedBookingBoss and booking.approvedManager %}
                 <tr>
                     <!--<th>{{forloop.counter}}</th>-->
                     <td>{{booking}}</td>

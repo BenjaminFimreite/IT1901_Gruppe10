@@ -26,7 +26,7 @@ class AddShiftForm(forms.Form):
     del techs[techs.index(1)]
     technician = forms.ModelChoiceField(queryset=User.objects.filter(id__in=techs), label="Choose technician",
                                         required=True)
-    booking = forms.ModelChoiceField(queryset=Booking.objects.filter(date__gte=datetime.datetime.now().date()),
+    booking = forms.ModelChoiceField(queryset=Booking.objects.filter(date__gte=datetime.datetime.now().date()).filter(approvedBookingBoss=True).filter(approvedManager=True),
                                      label="Choose booking", required=True)
 
 
