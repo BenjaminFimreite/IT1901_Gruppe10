@@ -10,7 +10,7 @@
  <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
  <li class="breadcrumb-item active">Pending Bookings</li>
 </ol>
-
+<div class="container-fluid"> 
 	<div id="pending_bookings">
     {% if user|can:'view_bookings' %}
 
@@ -72,4 +72,5 @@
 		{% endif %}
 		<!--<img src="{% static "img/heart.png" %}" alt="hjerte">-->
 	</div>
+</div>
 {% endblock %}

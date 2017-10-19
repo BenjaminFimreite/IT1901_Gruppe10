@@ -15,7 +15,7 @@
    <li class="breadcrumb-item"><a href="/">Home</a></li>
    <li class="breadcrumb-item active">Overview</li>
 </ol>
-
+<div class="container-fluid">
 <div id="concert_overview">
     {% if user|can:'view_concerts' %}
 
@@ -196,5 +196,7 @@
 			</div>
 
 			{% endif %}
+</div>
+
 </div>
 {% endblock %}
