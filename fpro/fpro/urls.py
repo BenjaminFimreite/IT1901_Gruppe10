@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^bands/band/(?P<band_id>[0-9]+)/$', views.band, name="band"),
     url(r'^overview$', views.overview, name='overview'),
     url(r'^send_techneeds$', views.send_techneeds, name='send_techneeds'),
+    url(r'^Songs$', views.send_songs, name='Songs'),
 ]
