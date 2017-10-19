@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Booking{% endblock %}
 {% load static %}
+{% load widget_tweaks %}
+
 
 {% load permission_tags %}
 
@@ -20,13 +22,38 @@
 	<ul>
 		<li>Band: {{booking.band.bandName}}</li>
 		<li>Date: {{booking.date}}</li>
-    <li>Manager Email: {{booking.managerEmail}}</li>
+        <li>Manager Email: {{booking.managerEmail}}</li>
 		<li>BookingBoss Approved: {{booking.approvedBookingBoss}}</li>
 		<li>Manager Approved: {{booking.approvedManager}}</li>
 		<li>Tech Req: {{booking.technicalRequirements}}</li>
 		<li>Scene: {{booking.scene}}</li>
 		<li>Price for band: {{booking.bandPrice}}</li>
 	</ul>
+    
+    {% if user|can:'send_review' %}
+    <div id="boksrundtform">
+        <form id="send_review_form" method="post">
+            {% csrf_token %}
+            <br>
+
+            <!-- Genererer en form -->
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+            <div class="form-group" style="margin-left: 25px; margin-right: 25px">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|add_class:'form-control' }}
+                {% for error in field.errors %}
+                <span class="help-block">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
+        </form>
+    </div>
+    {% endif %}
+    
 	{% else %}
 	{% endif %}
 </div>

@@ -25,6 +25,7 @@ class BookingAnsvarlig(AbstractUserRole):
         'search_band_info': True,
         'tech_needs': True,
         'view_bookings': True,
+        'send_review': True,
     }
 
 

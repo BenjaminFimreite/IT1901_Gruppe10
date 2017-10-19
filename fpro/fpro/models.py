@@ -41,6 +41,7 @@ class Booking(models.Model):
     bandPrice = models.DecimalField(max_digits=30, decimal_places=2, default=0)
     otherCosts = models.DecimalField(max_digits=30, decimal_places=2, default=0)
     ticketsSold = models.IntegerField(default=0)
+    review = models.CharField(max_length=500, blank=True, default="")
 
     def totalCostResult(self):
         return self.ticketPrice * self.ticketsSold - self.bandPrice - self.otherCosts
