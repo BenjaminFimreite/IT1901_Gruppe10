@@ -10,8 +10,8 @@
   <li class="breadcrumb-item"><a href="/">Home</a></li>
   <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
   <li class="breadcrumb-item active">Booking</li>
- </ol>
-
+</ol>
+<div class="container-fluid">
 
 <div id="view_booking">
 	{% if user|can:'view_bookings' %}
@@ -29,5 +29,6 @@
 	</ul>
 	{% else %}
 	{% endif %}
+</div>
 </div>
 {% endblock %}
