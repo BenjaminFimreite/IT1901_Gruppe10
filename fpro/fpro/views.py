@@ -81,11 +81,11 @@ def create_booking2(request):
             if b_form not in bookings:
                 b_form.save()
                 # redirect to a new URL:
-                return HttpResponse("Booking successfully created")
+                return HttpResponseRedirect("/booking_sent")
             else:
                 b_form.delete()
                 return HttpResponse("Booking already exists")
-                # if a GET (or any other method) we'll create a blank form
+    # if a GET (or any other method) we'll create a blank form
     else:
         form = CreateBookingForm()
 
@@ -137,8 +137,28 @@ def booking(request, booking_id):
     bookings = Booking.objects.all()
     booking = Booking.objects.get(id=booking_id)
     template = loader.get_template('booking.html')
+    
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = SendReviewForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            print(form.cleaned_data)  # a dictionary
+            if booking.review is not None:
+                booking.review += '\n'
+            booking.review += form.cleaned_data["review"]
+            booking.save()
+            # redirect to a new URL:
+            return HttpResponseRedirect("/review_sent")
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = SendReviewForm()
+        
+    
     context = {
         'booking': booking,
+        'form': form,
     }
     return HttpResponse(template.render(context, request))
 
@@ -275,13 +295,32 @@ def send_techneeds(request):
             booking.technicalRequirements += form.cleaned_data["techneeds"]
             booking.save()
             # redirect to a new URL:
-            return HttpResponse("Techneeds successfully sent")
+            return HttpResponseRedirect("/techneeds_sent")
             # if a GET (or any other method) we'll create a blank form
     else:
         form = SendTechneedsForm()
     context = {
         'bookings': bookings,
         'form': form,
+    }
+    return HttpResponse(template.render(context, request))
+
+def review_sent(request):
+    template = loader.get_template('review_sent.html')
+    context = {
+    }
+    return HttpResponse(template.render(context, request))
+
+def techneeds_sent(request):
+    template = loader.get_template('techneeds_sent.html')
+    context = {
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def booking_sent(request):
+    template = loader.get_template('booking_sent.html')
+    context = {
     }
     return HttpResponse(template.render(context, request))
 
