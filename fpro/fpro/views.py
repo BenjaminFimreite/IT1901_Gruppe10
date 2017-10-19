@@ -305,7 +305,6 @@ def send_techneeds(request):
     }
     return HttpResponse(template.render(context, request))
 
-<<<<<<< HEAD
 def review_sent(request):
     template = loader.get_template('review_sent.html')
     context = {
