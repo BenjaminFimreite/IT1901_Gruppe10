@@ -2,18 +2,18 @@
 
 {% load widget_tweaks %}
 
-{% block title %}Send technical requirements{% endblock %}
+{% block title %}Send list of songs{% endblock %}
 
 {% block content %}
 <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active">Send technical requirements</li>
+    <li class="breadcrumb-item active">Send songs to be played and songs to rehearse</li>
 </ol>
 
 {% load permission_tags %}
 
-{% if user|can:'send_techneeds' %}
-<h4 style="margin-left: 25px">Here you can send a list of your technical requirements</h4>
+{% if user|can:'send_songs' %}
+<h4 style="margin-left: 25px">Here you can send a list of songs to be played and songs to rehearse</h4>
 
 <div id="boksrundtform">
     {% load permission_tags %}
@@ -21,7 +21,7 @@
     <form id="send_techneeds_form" method="post">
         {% csrf_token %}
         <br>
-        
+
         <!-- Genererer en form -->
         {% for hidden in form.hidden_fields %}
         {{ hidden }}
@@ -36,7 +36,7 @@
         </div>
         {% endfor %}
         <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
-        
+
     </form>
 
 </div>

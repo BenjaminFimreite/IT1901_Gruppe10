@@ -19,6 +19,14 @@ Migrate modeller inn i database (SQLite):
 	
 Shell:
 	python3 manage.py shell		// her kan du gjøre mye rart
+	
+Legge til permission på bruker i 'shell':
+// Forutsetter at det finnes en klasse i roles.py med permission du ønsker å legge til...
+	from django.contrib.auth.models import User
+	from rolepermissions.roles import AbstractUserRole
+	user = User.objects.get(id=1)   // hent ønsket user
+	assign_role(user, 'doctor')     // doctor er rollen
+	
 ```
 Endre DB på nettsiden: 127.0.0.1:8000/admin	<br />
 

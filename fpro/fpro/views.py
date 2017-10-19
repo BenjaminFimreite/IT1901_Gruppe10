@@ -305,6 +305,7 @@ def send_techneeds(request):
     }
     return HttpResponse(template.render(context, request))
 
+<<<<<<< HEAD
 def review_sent(request):
     template = loader.get_template('review_sent.html')
     context = {
@@ -321,5 +322,33 @@ def techneeds_sent(request):
 def booking_sent(request):
     template = loader.get_template('booking_sent.html')
     context = {
+    }
+    return HttpResponse(template.render(context, request))
+
+def send_songs(request):
+    bookings = Booking.objects.all()
+    template = loader.get_template("Songs.html")
+
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = SendSongsForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            print(form.cleaned_data)  # a dictionary
+            booking = form.cleaned_data["booking"]  # henter valgt booking
+            if booking.Songs is not None:
+                booking.Songs += '\n'
+            booking.Songs += form.cleaned_data["songs"]
+            booking.save()
+            # redirect to a new URL:
+            return HttpResponse("Songs successfully sent")
+            # if a GET (or any other method) we'll create a blank form
+    else:
+        form = SendSongsForm()
+    context = {
+        'bookings': bookings,
+        'form': form,
     }
     return HttpResponse(template.render(context, request))

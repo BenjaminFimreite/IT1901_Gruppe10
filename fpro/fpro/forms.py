@@ -36,6 +36,14 @@ class SendTechneedsForm(forms.Form):
     techneeds = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your technical needs:",
                                 max_length=100, required=True)
     
+    
 class SendReviewForm(forms.Form):
-    review = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Type your review here:",
+    review = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your technical needs:",
+                                max_length=100, required=True)
+    
+    
+class SendSongsForm(forms.Form):
+    booking = forms.ModelChoiceField(queryset=Booking.objects.filter(date__gte=datetime.datetime.now().date()),
+                                     label="Choose booking:", required=True)
+    songs = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your song:",
                                 max_length=100, required=True)

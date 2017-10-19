@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^review_sent$', views.review_sent, name='review_sent'),
     url(r'^techneeds_sent$', views.techneeds_sent, name='techneeds_sent'),
     url(r'^booking_sent$', views.booking_sent, name='booking_sent'),
+    url(r'^Songs$', views.send_songs, name='Songs'),
 ]
