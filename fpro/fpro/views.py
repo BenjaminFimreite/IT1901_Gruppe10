@@ -137,7 +137,7 @@ def booking(request, booking_id):
     bookings = Booking.objects.all()
     booking = Booking.objects.get(id=booking_id)
     template = loader.get_template('booking.html')
-    
+
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = SendReviewForm(request.POST)
@@ -154,8 +154,8 @@ def booking(request, booking_id):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SendReviewForm()
-        
-    
+
+
     context = {
         'booking': booking,
         'form': form,

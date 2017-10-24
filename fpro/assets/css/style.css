@@ -81,7 +81,6 @@ input:focus {
 	z-index: -1;
 }
 
-
 /* View Bookings */
 
 #view_bookings li {
@@ -109,8 +108,6 @@ input:focus {
 	text-align: center;
 }
 
-#view_booking p{
+#view_booking p {
 	color: lightgray;
 }
-
-

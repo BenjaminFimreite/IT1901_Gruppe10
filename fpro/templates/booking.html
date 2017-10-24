@@ -30,7 +30,7 @@
 		<li>Price for band: {{booking.bandPrice}}</li>
 		<li>Songs: {{booking.Songs}}</li>
 	</ul>
-    
+
     {% if user|can:'send_review' %}
     <div id="boksrundtform">
         <form id="send_review_form" method="post">
@@ -54,9 +54,34 @@
         </form>
     </div>
     {% endif %}
-    
+
 	{% else %}
 	{% endif %}
+</div>
+<div id="view_pr">
+  <!--kommentert ut if setningen inntil fikset roles -->
+  <!--{% if user|can:'view_pr_information' %}-->
+      <h1>More PR information</h1>
+      <ul>
+        {% if booking.band.Visits %}
+        <li>Visits: {{booking.band.Visits}}</li>
+        {% else %}
+        <li>Visits: This band has no previous visits</li>
+        {% endif %}
+        {% if booking.review %}
+        <li>Reviews: {{booking.review}}</li>
+        {% else %}
+        <li>Reviews: There are no reviews yet</li>
+        {% endif %}
+        {% if booking.pressLink %}
+        <li>Press coverage: <a href = "{{booking.pressLink}}">{{booking.pressLink}}</li>
+        {% else %}
+        <li>Press coverage: There has been no press coverage yet</li>
+        {% endif %}
+      </ul>
+
+  <!--{% endif %}-->
+
 </div>
 </div>
 {% endblock %}

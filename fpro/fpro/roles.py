@@ -39,3 +39,9 @@ class Manager(AbstractUserRole):
     available_permissions = {
         'send_techneeds': True,
     }
+
+class PrManager(AbstractUserRole):
+    available_permissions = {
+        'view_bookings': True,
+        'view_pr_information': True,
+    }
