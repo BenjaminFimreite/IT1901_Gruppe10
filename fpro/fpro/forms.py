@@ -38,7 +38,7 @@ class SendTechneedsForm(forms.Form):
     
     
 class SendReviewForm(forms.Form):
-    review = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Specify your technical needs:",
+    review = forms.CharField(widget=forms.Textarea(attrs={'rows': '10'}), label="Write your review here:",
                                 max_length=100, required=True)
     
     
