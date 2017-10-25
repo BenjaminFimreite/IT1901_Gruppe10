@@ -60,7 +60,7 @@
 </div>
 <div id="view_pr">
   <!--kommentert ut if setningen inntil fikset roles -->
-  <!--{% if user|can:'view_pr_information' %}-->
+  {% if user|can:'view_pr_information' %}
       <h1>More PR information</h1>
       <ul>
         {% if booking.band.Visits %}
@@ -80,8 +80,9 @@
         {% endif %}
       </ul>
 
-  <!--{% endif %}-->
+  {% endif %}
 
 </div>
+<br  /><br />
 </div>
 {% endblock %}

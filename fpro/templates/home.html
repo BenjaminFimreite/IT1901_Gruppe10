@@ -26,7 +26,7 @@
             {% if user|can:'view_bookings' %}
                 <a href="{% url 'bookings' %}">Bookings</a><br>
             {% endif %}
-            {% if user|can:'view_bookings' %}
+            {% if user|can:'accept_booking' %}
                 <a href="{% url 'pending_bookings' %}">Pending bookings</a><br>
             {% endif %}
             {% if user|can:'search_band' %}
