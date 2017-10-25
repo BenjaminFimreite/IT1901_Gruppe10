@@ -38,6 +38,7 @@ class Tekniker(AbstractUserRole):
 class Manager(AbstractUserRole):
     available_permissions = {
         'send_techneeds': True,
+		'register_songs' : True,
     }
 
 class PrManager(AbstractUserRole):

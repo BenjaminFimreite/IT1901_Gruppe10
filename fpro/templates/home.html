@@ -35,7 +35,11 @@
             {% if user|can:'send_techneeds' %}
                 <a href="{% url 'send_techneeds' %}">Send technical requirements</a><br>
             {% endif %}
-        
+						{% if user|can:'register_songs' %}
+								<a href="{% url 'Songs' %}">Manager Register Songs</a><br>
+						{% endif %}
+
+
         </div>
     </div>
 </div>

@@ -41,6 +41,7 @@
                     <th>Band</th>
                     <th>Scene</th>
                     <th>Technicians</th>
+										<th>Tech Contact</th>
 										<th>Details</th>
                 </thead>
 
@@ -54,8 +55,13 @@
                         	<th>{{b.scene}}</th>
                         	<th>
 														{% for t in b.technicians.all %}
-														{% if forloop.counter0 == 0%} | {% endif %}
+															{% if forloop.counter0 == 0%} | {% endif %}
 															{{t}} |
+														{% endfor %}
+													</th>
+													<th>
+														{% for t in b.technicians.all %}
+															{% if forloop.counter0 == 0%} {{t}} {% endif %}
 														{% endfor %}
 													</th>
 													<th><button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See details</button></th>
