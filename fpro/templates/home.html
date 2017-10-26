@@ -20,7 +20,7 @@
             {% elif user|can:'view_my_shifts' %}
                 <a href="{% url 'shifts' %}">My shifts</a><br>
             {% endif %}
-            {% if user|can:'view_concerts' %}
+            {% if user|can:'view_concerts' or user|can:'can_serve_food'%}
                 <a href="{% url 'overview' %}">Overview</a><br>
             {% endif %}
             {% if user|can:'view_bookings' %}
