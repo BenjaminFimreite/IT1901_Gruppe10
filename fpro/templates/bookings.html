@@ -6,19 +6,19 @@
 
 {% block content %}
 <ol class="breadcrumb">                                                                             
- <li class="breadcrumb-item"><a href="/">Home</a></li>
- <li class="breadcrumb-item active">Bookings</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Bookings</li>
 </ol>
 
-	<div id="view_bookings">
-		{% if user|can:'view_bookings' %}
-		<h1>View Bookings</h1>
-		{% for b in bookings %}
-		<li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See Details</button></li>
-		{% endfor %}
-		{% else %}
-			<script language="javascript">window.location.href = "/"</script>
-		{% endif %}
-		<img src="{% static "img/heart.png" %}" alt="hjerte">
-	</div>
+<div id="view_bookings">
+    {% if user|can:'view_bookings' %}
+    <h1>View Bookings</h1>
+    {% for b in bookings %}
+    <li>{{ b }} <button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See Details</button></li>
+    {% endfor %}
+    {% else %}
+    <script language="javascript">window.location.href = "/"</script>
+    {% endif %}
+    <img src="{% static "img/heart.png" %}" alt="hjerte">
+</div>
 {% endblock %}

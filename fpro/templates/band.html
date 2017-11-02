@@ -7,22 +7,22 @@
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/bands">Bands</a></li>
-  <li class="breadcrumb-item active">Band</li>
- </ol>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/bands">Bands</a></li>
+    <li class="breadcrumb-item active">Band</li>
+</ol>
 
 
 <div id="view_band">
-	{% if user|can:'search_band' %}
-	<h1>View Band</h1>
-	<p>{{band.bandName}}</p>
-	<ul>
-		<li> Genre: {{band.genre}}</li>
-		<li> Visits: {{band.Visits}}</li>
-		<li> StreamCount: {{band.StreamCount}}</li>
-	</ul>
-	{% else %}
-	{% endif %}
+    {% if user|can:'search_band' %}
+    <h1>View Band</h1>
+    <p>{{band.bandName}}</p>
+    <ul>
+        <li> Genre: {{band.genre}}</li>
+        <li> Visits: {{band.Visits}}</li>
+        <li> StreamCount: {{band.StreamCount}}</li>
+    </ul>
+    {% else %}
+    {% endif %}
 </div>
 {% endblock %}

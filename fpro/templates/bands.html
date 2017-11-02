@@ -6,21 +6,21 @@
 
 {% block content %}
 <ol class="breadcrumb">
- <li class="breadcrumb-item"><a href="/">Home</a></li>
- <li class="breadcrumb-item active">Bands</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Bands</li>
 </ol>
 <div class="container-fluid">
-	<div id="view_band">
-		{% if user|can:'search_band' %}
-		<h1>View Bands</h1>
-		{% for b in bands %}
-		<p></p>
-		<p></p>
-		<p>&ensp;&ensp;{{ b.bandName }}&ensp; &ensp; <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See band information</button></p>
-		{% endfor %}
-		{% else %}
-			<script language="javascript">window.location.href = "/"</script>
-		{% endif %}
-	</div>
+    <div id="view_band">
+        {% if user|can:'search_band' %}
+        <h1>View Bands</h1>
+        {% for b in bands %}
+        <p></p>
+        <p></p>
+        <p>&ensp;&ensp;{{ b.bandName }}&ensp; &ensp; <button type="button" name="button" onclick="window.location.href = '/bands/band/{{b.id}}'">See band information</button></p>
+        {% endfor %}
+        {% else %}
+        <script language="javascript">window.location.href = "/"</script>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

@@ -8,92 +8,92 @@
     <li class="breadcrumb-item active">Shifts</li>
 </ol>
 <div class="container-fluid">
-{% load permission_tags %}
-<p>Logged in as user: {{user}}</p>
+    {% load permission_tags %}
+    <p>Logged in as user: {{user}}</p>
 
-<!--Dette vises for arrangøren-->
-{% if user|can:'view_edit_all_shifts' %}
-<h4>Here you can manage working shifts</h4>
-<div id="edit_shit">
-    <form>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add" />
-    </form>
-</div>
+    <!--Dette vises for arrangøren-->
+    {% if user|can:'view_edit_all_shifts' %}
+    <h4>Here you can manage working shifts</h4>
+    <div id="edit_shit">
+        <form>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add" />
+        </form>
+    </div>
 
-<br><br>
+    <br><br>
 
 
-<div id="shits">
-    <h3>List of registered shifts</h3>
+    <div id="shits">
+        <h3>List of registered shifts</h3>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <!--<th>#</th>-->
-                <th>Booking</th>
-                <th>Technical requirements</th>
-                <th>Technicians</th>
-            </tr>
-        </thead>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!--<th>#</th>-->
+                    <th>Booking</th>
+                    <th>Technical requirements</th>
+                    <th>Technicians</th>
+                </tr>
+            </thead>
 
-        <tbody>
-            {% for booking in bookings %}
+            <tbody>
+                {% for booking in bookings %}
                 {% if booking.inFuture and booking.approvedBookingBoss and booking.approvedManager %}
                 <tr>
                     <!--<th>{{forloop.counter}}</th>-->
                     <td>{{booking}}</td>
                     <td>{{booking.technicalRequirements}}</td>
                     <td>
-                                    {% for t in booking.technicians.all %}
-                                    {% if forloop.counter0 == 0%} | {% endif %}
-                                        {{t}} |
-                                    {% endfor %}
-                                    </td>
+                        {% for t in booking.technicians.all %}
+                        {% if forloop.counter0 == 0%} | {% endif %}
+                        {{t}} |
+                        {% endfor %}
+                    </td>
                 </tr>
                 {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-<br><br><br>
-{% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br><br><br>
+    {% endif %}
 
-<!--Dette vises for teknikerne-->
-{% if user|can:'view_my_shifts' %}
-<h3>You are working at the following concerts: </h3>
-<div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Concert</th>
-                <th>Technical requirements</th>
-            </tr>
-        </thead>
+    <!--Dette vises for teknikerne-->
+    {% if user|can:'view_my_shifts' %}
+    <h3>You are working at the following concerts: </h3>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Concert</th>
+                    <th>Technical requirements</th>
+                </tr>
+            </thead>
 
-        <tbody>
-            {% for booking in user_bookings %}
-            <tr>
-                <th>{{forloop.counter}}</th>
-                <td>{{booking}}</td>
-                <!--Henter ut spesifike krav til bookingen-->
-                <td>{{booking.technicalRequirements}}</td>
-								<td class="table-success">
-			            <form action="send_email" method="post">
-			              <button type="button" name="button" id="accept" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=accepted'">Attended</button>
-			            </form>
-			          </td>
-			          <td class="table-danger">
-			            <button type="button" name="button" id="decline" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=declined'">Not Attended</button>
-			          </td>
+            <tbody>
+                {% for booking in user_bookings %}
+                <tr>
+                    <th>{{forloop.counter}}</th>
+                    <td>{{booking}}</td>
+                    <!--Henter ut spesifike krav til bookingen-->
+                    <td>{{booking.technicalRequirements}}</td>
+                    <td class="table-success">
+                        <form action="send_email" method="post">
+                            <button type="button" name="button" id="accept" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=accepted'">Attended</button>
+                        </form>
+                    </td>
+                    <td class="table-danger">
+                        <button type="button" name="button" id="decline" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=declined'">Not Attended</button>
+                    </td>
 
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

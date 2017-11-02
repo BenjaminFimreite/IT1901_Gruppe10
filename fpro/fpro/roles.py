@@ -5,6 +5,7 @@ class Arrangor(AbstractUserRole):
     available_permissions = {
         'view_edit_all_shifts': True,
         'view_concerts': True,
+        'view_scene_info': True,
     }
 
 

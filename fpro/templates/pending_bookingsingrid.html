@@ -6,31 +6,31 @@
 {% load permission_tags %}
 {% block content %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item active">Create Booking</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Create Booking</li>
 </ol>
 
 {% load permission_tags %}
 
-  #vis bookingene som er hentet fra database her
-  <h2>Godkjenn booking(er)</h2>
+#vis bookingene som er hentet fra database her
+<h2>Godkjenn booking(er)</h2>
 
-    <!-- Må iterere gjennom alle bookingobjektene før du skriver ut noe  -->
+<!-- Må iterere gjennom alle bookingobjektene før du skriver ut noe  -->
 
-    for all b in bookings:
-      {{ b.form.managerEmail }}
-      {{ b.form.pris }}
-      {{ b.form.scene }}
-      {{ b.form.date }}
-    <input type='submit' value='approve_offer'/>
-
-
+for all b in bookings:
+{{ b.form.managerEmail }}
+{{ b.form.pris }}
+{{ b.form.scene }}
+{{ b.form.date }}
+<input type='submit' value='approve_offer'/>
 
 
 
-  {% if user|can:'approve_bookingoffer' %}
-  {% else %}
-      <script language="javascript">window.location.href = "/"</script>
-  {% endif %}
+
+
+{% if user|can:'approve_bookingoffer' %}
+{% else %}
+<script language="javascript">window.location.href = "/"</script>
+{% endif %}
 
 {% endblock %}

@@ -6,71 +6,71 @@
 
 {% block content %}
 <ol class="breadcrumb">
- <li class="breadcrumb-item"><a href="/">Home</a></li>
- <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
- <li class="breadcrumb-item active">Pending Bookings</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
+    <li class="breadcrumb-item active">Pending Bookings</li>
 </ol>
 <div class="container-fluid">
-	<div id="pending_bookings">
-    {% if user|can:'view_bookings' %}
+    <div id="pending_bookings">
+        {% if user|can:'view_bookings' %}
 
-    <h3>Pending bookings</h3>
-    <!--Table for pending bookings-->
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Pending Booking</th>
-          <th>Accept Bookingoffer</th>
-          <th>Decline Bookingoffer</th>
-        </tr>
-      </thead>
+        <h3>Pending bookings</h3>
+        <!--Table for pending bookings-->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Pending Booking</th>
+                    <th>Accept Bookingoffer</th>
+                    <th>Decline Bookingoffer</th>
+                </tr>
+            </thead>
 
-      <tbody>
-    		{% for b in pending_bookings_array %}
-        <tr>
-          <th scope="row">{{forloop.counter}}</th>
-          <td class="table-active">{{b}}</td>
-          <td class="table-success">
-            <form action="send_email" method="post">
-              <button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
-            </form>
-          </td>
-          <td class="table-danger">
-            <button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
-          </td>
-        </tr>
-    		 {% endfor %}
-      </tbody>
+            <tbody>
+                {% for b in pending_bookings_array %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td class="table-active">{{b}}</td>
+                    <td class="table-success">
+                        <form action="send_email" method="post">
+                            <button type="button" name="button" id="accept" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=accepted'">Accept Bookingoffer</button>
+                        </form>
+                    </td>
+                    <td class="table-danger">
+                        <button type="button" name="button" id="decline" onclick="window.location.href = '/bookings/pending_bookings?booking={{b.id}}&value=declined'">Decline Bookingoffer</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-     </table>
-     <br><br><br>
-     <h3>Bookings sent to manager</h3>
-     <!--Table for approved bookings-->
-     <table class="table">
-       <thead>
-         <tr>
-            <th>#</th>
-            <th>Bookings approved by bookingboss<th>
-            <th>Status</th>
-         </tr>
-       </thead>
-       <tbody>
-         {% for x in approved_by_bookingboss %}
-         <tr class="table-danger">
-            <th scope="row">{{forloop.counter}}</th>
-            <td>{{x}}<td>
-            <td>Awaiting manager approval</td>
-         </tr>
-         {% endfor %}
-       </tbody>
+        </table>
+        <br><br><br>
+        <h3>Bookings sent to manager</h3>
+        <!--Table for approved bookings-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Bookings approved by bookingboss<th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in approved_by_bookingboss %}
+                <tr class="table-danger">
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{x}}<td>
+                    <td>Awaiting manager approval</td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-     </table>
+        </table>
 
-		{% else %}
-			<script language="javascript">window.location.href = "/"</script>
-		{% endif %}
-		<!--<img src="{% static "img/heart.png" %}" alt="hjerte">-->
-	</div>
+        {% else %}
+        <script language="javascript">window.location.href = "/"</script>
+        {% endif %}
+        <!--<img src="{% static "img/heart.png" %}" alt="hjerte">-->
+    </div>
 </div>
 {% endblock %}

@@ -5,11 +5,11 @@
 
 {% load permission_tags %}
 {% block content %}
-  <h2>Search band info</h2>
+<h2>Search band info</h2>
 
 <form method="get" action="/search/">
-  Search Notecards:<input type="text" name="userinput" id="id_q" value="{{ query }}"/>
-  <input type="submit" value="Search" />
+    Search Notecards:<input type="text" name="userinput" id="id_q" value="{{ query }}"/>
+    <input type="submit" value="Search" />
 </form>
 
-  {% load permission_tags %}
+{% load permission_tags %}

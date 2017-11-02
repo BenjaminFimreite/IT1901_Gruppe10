@@ -9,80 +9,80 @@
 {% block content %}
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
-  <li class="breadcrumb-item active">Booking</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/bookings">Bookings</a></li>
+    <li class="breadcrumb-item active">Booking</li>
 </ol>
 <div class="container-fluid">
 
-<div id="view_booking">
-	{% if user|can:'view_bookings' %}
-	<h1>View Booking</h1>
-	<p>{{booking}}</p>
-	<ul>
-		<li>Band: {{booking.band.bandName}}</li>
-		<li>Date: {{booking.date}}</li>
-        <li>Manager Email: {{booking.managerEmail}}</li>
-		<li>BookingBoss Approved: {{booking.approvedBookingBoss}}</li>
-		<li>Manager Approved: {{booking.approvedManager}}</li>
-		<li>Tech Req: {{booking.technicalRequirements}}</li>
-		<li>Scene: {{booking.scene}}</li>
-		<li>Price for band: {{booking.bandPrice}}</li>
-		<li>Songs: {{booking.Songs}}</li>
-	</ul>
+    <div id="view_booking">
+        {% if user|can:'view_bookings' %}
+        <h1>View Booking</h1>
+        <p>{{booking}}</p>
+        <ul>
+            <li>Band: {{booking.band.bandName}}</li>
+            <li>Date: {{booking.date}}</li>
+            <li>Manager Email: {{booking.managerEmail}}</li>
+            <li>BookingBoss Approved: {{booking.approvedBookingBoss}}</li>
+            <li>Manager Approved: {{booking.approvedManager}}</li>
+            <li>Tech Req: {{booking.technicalRequirements}}</li>
+            <li>Scene: {{booking.scene}}</li>
+            <li>Price for band: {{booking.bandPrice}}</li>
+            <li>Songs: {{booking.Songs}}</li>
+        </ul>
 
-    {% if user|can:'send_review' %}
-    <div id="boksrundtform">
-        <form id="send_review_form" method="post">
-            {% csrf_token %}
-            <br>
+        {% if user|can:'send_review' %}
+        <div id="boksrundtform">
+            <form id="send_review_form" method="post">
+                {% csrf_token %}
+                <br>
 
-            <!-- Genererer en form -->
-            {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-            {% endfor %}
-            {% for field in form.visible_fields %}
-            <div class="form-group" style="margin-left: 25px; margin-right: 25px">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field|add_class:'form-control' }}
-                {% for error in field.errors %}
-                <span class="help-block">{{ error }}</span>
+                <!-- Genererer en form -->
+                {% for hidden in form.hidden_fields %}
+                {{ hidden }}
                 {% endfor %}
-            </div>
-            {% endfor %}
-            <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
-        </form>
+                {% for field in form.visible_fields %}
+                <div class="form-group" style="margin-left: 25px; margin-right: 25px">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field|add_class:'form-control' }}
+                    {% for error in field.errors %}
+                    <span class="help-block">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
+            </form>
+        </div>
+        {% endif %}
+
+        {% else %}
+        {% endif %}
     </div>
-    {% endif %}
+    <div id="view_pr">
+        <!--kommentert ut if setningen inntil fikset roles -->
+        {% if user|can:'view_pr_information' %}
+        <h1>More PR information</h1>
+        <ul>
+            {% if booking.band.Visits %}
+            <li>Visits: {{booking.band.Visits}}</li>
+            {% else %}
+            <li>Visits: This band has no previous visits</li>
+            {% endif %}
+            {% if booking.review %}
+            <li>Reviews: {{booking.review}}</li>
+            {% else %}
+            <li>Reviews: There are no reviews yet</li>
+            {% endif %}
+            {% if booking.pressLink %}
+            <li>Press coverage: <a href = "{{booking.pressLink}}">{{booking.pressLink}}</li>
+                {% else %}
+            <li>Press coverage: There has been no press coverage yet</li>
+            {% endif %}
+        </ul>
 
-	{% else %}
-	{% endif %}
-</div>
-<div id="view_pr">
-  <!--kommentert ut if setningen inntil fikset roles -->
-  {% if user|can:'view_pr_information' %}
-      <h1>More PR information</h1>
-      <ul>
-        {% if booking.band.Visits %}
-        <li>Visits: {{booking.band.Visits}}</li>
-        {% else %}
-        <li>Visits: This band has no previous visits</li>
         {% endif %}
-        {% if booking.review %}
-        <li>Reviews: {{booking.review}}</li>
-        {% else %}
-        <li>Reviews: There are no reviews yet</li>
-        {% endif %}
-        {% if booking.pressLink %}
-        <li>Press coverage: <a href = "{{booking.pressLink}}">{{booking.pressLink}}</li>
-        {% else %}
-        <li>Press coverage: There has been no press coverage yet</li>
-        {% endif %}
-      </ul>
 
-  {% endif %}
-
-</div>
-<br  /><br />
+    </div>
+    <br  /><br />
 </div>
 {% endblock %}
