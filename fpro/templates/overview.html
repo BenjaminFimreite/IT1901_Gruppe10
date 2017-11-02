@@ -29,9 +29,6 @@
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#genre" role="tab">Archive by Genre</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#searchBand" role="tab">Search Band</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#festival" role="tab">Festival overview</a></li>
-            {% if user|can:'view_scene_info'%}
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scene" role="tab">Scene overview</a></li>
-            {% endif %}
             {% endif %}
         </ul>
 
@@ -51,6 +48,7 @@
                             <th>Tech Contact</th>
                             <th>Genre</th>
                             <th>Expected Visitors</th>
+                            <th>Calculated Goods Costs</th>
                             <th>Details</th>
                         </thead>
 
@@ -75,6 +73,7 @@
                                 </th>
                                 <th>{{b.band.genre}}</th>
                                 <th>{{b.ticketsSold}}</th>
+                                <th>{% widthratio b.ticketsSold 1 30 %}</th>
                                 <th><button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See details</button></th>
                             </tr>
                             {% endif %}
@@ -83,117 +82,116 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="tab-pane" id="archive" role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
-                    {% for scene in scenes %}
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#archiveTab{{ forloop.counter }}" role="tab">{{scene}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <div class="tab-content">
+                <div class="tab-pane" id="archive" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        {% for scene in scenes %}
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#archiveTab{{ forloop.counter }}" role="tab">{{scene}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content">
 
-                    {% for scene in scenes %}
-                    <div class="tab-pane" id="archiveTab{{ forloop.counter }}" role="tabpanel">
-                        <h2 class="overskrift">Past concerts at {{scene}}</h2>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Band</th>
-                                    <th>Genre</th>
-                                    <th>Date</th>
-                                    <th>Tickets sold</th>
-                                    <th>Total cost</th>
-                                    <th>Band cost</th>
-                                    <th>Other costs</th>
-                                    <th>Ticket cost</th>
-                                    <th>Earnings</th>
-                                </tr>
-                            </thead>
+                        {% for scene in scenes %}
+                        <div class="tab-pane" id="archiveTab{{ forloop.counter }}" role="tabpanel">
+                            <h2 class="overskrift">Past concerts at {{scene}}</h2>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Band</th>
+                                        <th>Genre</th>
+                                        <th>Date</th>
+                                        <th>Tickets sold</th>
+                                        <th>Total cost</th>
+                                        <th>Band cost</th>
+                                        <th>Other costs</th>
+                                        <th>Ticket cost</th>
+                                        <th>Earnings</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                {% for b in past_bookings %}
-                                {% if b.scene == scene %}
-                                <tr>
-                                    <td>{{b.band}}</td>
-                                    <td>{{b.band.genre.genreName}}</td>
-                                    <td>{{b.date}}</td>
-                                    <td>{{b.ticketsSold}}</td>
-                                    <td>{{b.totalCost}}</td>
-                                    <td>{{b.bandPrice}}</td>
-                                    <td>{{b.otherCosts}}</td>
-                                    <td>{{b.ticketPrice}}</td>
-                                    <td>{{b.totalCostResult}}</td>
-                                </tr>
-                                {% endif %}
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                                <tbody>
+                                    {% for b in past_bookings %}
+                                    {% if b.scene == scene %}
+                                    <tr>
+                                        <td>{{b.band}}</td>
+                                        <td>{{b.band.genre.genreName}}</td>
+                                        <td>{{b.date}}</td>
+                                        <td>{{b.ticketsSold}}</td>
+                                        <td>{{b.totalCost}}</td>
+                                        <td>{{b.bandPrice}}</td>
+                                        <td>{{b.otherCosts}}</td>
+                                        <td>{{b.ticketPrice}}</td>
+                                        <td>{{b.totalCostResult}}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+
+                </div>
+                <div class="tab-pane" id="genre" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        {% for genre in genres %}
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#genreTab{{ forloop.counter }}" role="tab">{{genre.genreName}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content">
+                        {% for g in genres %}
+                        <div class="tab-pane" id="genreTab{{ forloop.counter }}" role="tabpanel">
+                            <h2 class="overskrift">Past concerts in {{g.genreName}}</h2>
+                            <!-- HER SKAL KODE SOM SKAL STÅ PÅ "genre" -->
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Band</th>
+                                        <th>Genre</th>
+                                        <th>Date</th>
+                                        <th>Tickets sold</th>
+                                        <th>Total cost</th>
+                                        <th>Band cost</th>
+                                        <th>Other costs</th>
+                                        <th>Ticket cost</th>
+                                        <th>Earnings</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for b in past_bookings %}
+                                    {% if b.band.genre == g %}
+                                    <tr>
+                                        <td>{{b.band}}</td>
+                                        <td>{{b.band.genre.genreName}}</td>
+                                        <td>{{b.date}}</td>
+                                        <td>{{b.ticketsSold}}</td>
+                                        <td>{{b.totalCost}}</td>
+                                        <td>{{b.bandPrice}}</td>
+                                        <td>{{b.otherCosts}}</td>
+                                        <td>{{b.ticketPrice}}</td>
+                                        <td>{{b.totalCostResult}}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
 
-            </div>
-            <div class="tab-pane" id="genre" role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
-                    {% for genre in genres %}
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#genreTab{{ forloop.counter }}" role="tab">{{genre.genreName}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-
-                <div class="tab-content">
-                    {% for g in genres %}
-                    <div class="tab-pane" id="genreTab{{ forloop.counter }}" role="tabpanel">
-                        <h2 class="overskrift">Past concerts in {{g.genreName}}</h2>
-                        <!-- HER SKAL KODE SOM SKAL STÅ PÅ "genre" -->
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Band</th>
-                                    <th>Genre</th>
-                                    <th>Date</th>
-                                    <th>Tickets sold</th>
-                                    <th>Total cost</th>
-                                    <th>Band cost</th>
-                                    <th>Other costs</th>
-                                    <th>Ticket cost</th>
-                                    <th>Earnings</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {% for b in past_bookings %}
-                                {% if b.band.genre == g %}
-                                <tr>
-                                    <td>{{b.band}}</td>
-                                    <td>{{b.band.genre.genreName}}</td>
-                                    <td>{{b.date}}</td>
-                                    <td>{{b.ticketsSold}}</td>
-                                    <td>{{b.totalCost}}</td>
-                                    <td>{{b.bandPrice}}</td>
-                                    <td>{{b.otherCosts}}</td>
-                                    <td>{{b.ticketPrice}}</td>
-                                    <td>{{b.totalCostResult}}</td>
-                                </tr>
-                                {% endif %}
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                    {% endfor %}
+                <!-- Search by Band -->
+                <div class="tab-pane" id="searchBand" role="tabpanel">
+                    <p>to be implemented</p>
                 </div>
-            </div>
 
-            <!-- Search by Band -->
-            <div class="tab-pane" id="searchBand" role="tabpanel">
-                <p>to be implemented</p>
-            </div>
-
-            <!-- Festival overview -->
-            <!--
+                <!-- Festival overview -->
+                <!--
 <div class="tab-pane" id="festival" role="tabpanel">
 <p><b>to be implemented</b></p>
 
@@ -210,53 +208,53 @@
 </div>
 -->
 
-            <div class="tab-pane" id="scene" role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
-                    {% for scene in scenes %}
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#sceneTab{{ forloop.counter }}" role="tab">{{scene}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <div class="tab-content">
+                <div class="tab-pane" id="scene" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        {% for scene in scenes %}
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#sceneTab{{ forloop.counter }}" role="tab">{{scene}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content">
 
-                    {% for scene in scenes %}
-                    <div class="tab-pane" id="sceneTab{{ forloop.counter }}" role="tabpanel">
-                        <h2 class="overskrift">Key data for {{scene}}</h2>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Ticketsales</th>
-                                    <th>Pending technical requirements</th>
-                                    <th>Completed technical requirements</th>
+                        {% for scene in scenes %}
+                        <div class="tab-pane" id="sceneTab{{ forloop.counter }}" role="tabpanel">
+                            <h2 class="overskrift">Key data for {{scene}}</h2>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Ticketsales</th>
+                                        <th>Pending technical requirements</th>
+                                        <th>Completed technical requirements</th>
 
-                                </tr>
-                            </thead>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                {% for b in bookings %}
-                                {% if b.scene == scene %}
-                                <tr>
-                                    <td>{{b.date}}</td>
-                                    <td>{{b.ticketsSold}}</td>
-                                    <td>{{b.technicalRequirements}}</td>
-                                    <td>{{b.completedTechnicalRequirements}}</td>
-                                </tr>
-                                {% endif %}
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                                <tbody>
+                                    {% for b in bookings %}
+                                    {% if b.scene == scene %}
+                                    <tr>
+                                        <td>{{b.date}}</td>
+                                        <td>{{b.ticketsSold}}</td>
+                                        <td>{{b.technicalRequirements}}</td>
+                                        <td>{{b.completedTechnicalRequirements}}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+
                 </div>
 
             </div>
 
+            {% endif %}
         </div>
 
-        {% endif %}
     </div>
-
-</div>
-{% endblock %}
+    {% endblock %}
