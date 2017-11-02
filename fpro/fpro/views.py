@@ -55,6 +55,7 @@ def create_booking2(request):
     template = loader.get_template('create_booking2.html')
 
     bookings = Booking.objects.all()
+    bands = Band.objects.values_list('bandName', flat=True)
 
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -65,11 +66,15 @@ def create_booking2(request):
             # process the data in form.cleaned_data as required
             print(form.cleaned_data)  # a dictionary
             b_form = Booking()  # lager ny booking
-            if form.cleaned_data["bandName"] != "":
+            print(form.cleaned_data["bandName"])
+            print(list(bands))
+            if form.cleaned_data["bandName"] != "" and form.cleaned_data["bandName"] not in list(bands):
                 band_temp = Band()
                 band_temp.bandName = form.cleaned_data["bandName"]
                 band_temp.save()
                 b_form.band = band_temp
+            elif form.cleaned_data["bandName"] != "":
+                b_form.band = bands.get(form.cleaned_data["bandName"])
             else:
                 b_form.band = form.cleaned_data["band"]
             b_form.date = form.cleaned_data["date"]
@@ -83,7 +88,6 @@ def create_booking2(request):
                 # redirect to a new URL:
                 return HttpResponseRedirect("/booking_sent")
             else:
-                b_form.delete()
                 return HttpResponse("Booking already exists")
     # if a GET (or any other method) we'll create a blank form
     else:

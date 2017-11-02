@@ -7,7 +7,8 @@ from rolepermissions.checkers import has_permission
 
 
 class CreateBookingForm(forms.Form):
-    band = forms.ModelChoiceField(queryset=Band.objects.values_list('bandName', flat=True), label="Choose band",
+    # Band.objects.values_list('bandName', flat=True)
+    band = forms.ModelChoiceField(queryset=Band.objects.all(), label="Choose band",
                                   required=False)
     bandName = forms.CharField(label="or specify new band name", max_length=100, required=False)
     managerEmail = forms.EmailField()
