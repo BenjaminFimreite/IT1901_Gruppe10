@@ -73,8 +73,6 @@ def create_booking2(request):
                 band_temp.bandName = form.cleaned_data["bandName"]
                 band_temp.save()
                 b_form.band = band_temp
-            elif form.cleaned_data["bandName"] != "":
-                b_form.band = bands.get(form.cleaned_data["bandName"])
             else:
                 b_form.band = form.cleaned_data["band"]
             b_form.date = form.cleaned_data["date"]
