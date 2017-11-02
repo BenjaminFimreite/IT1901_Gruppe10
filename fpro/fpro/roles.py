@@ -38,6 +38,7 @@ class Tekniker(AbstractUserRole):
 class Manager(AbstractUserRole):
     available_permissions = {
         'send_techneeds': True,
+		'register_songs' : True,
     }
 
 class PrManager(AbstractUserRole):
@@ -45,3 +46,9 @@ class PrManager(AbstractUserRole):
         'view_bookings': True,
         'view_pr_information': True,
     }
+
+class ServeringsAnsvarlig(AbstractUserRole):
+    available_permissions = {
+            'can_serve_food': True,
+    }
+

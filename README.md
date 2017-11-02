@@ -60,6 +60,8 @@ Tekniker: 		Brukernavn: Kim K, 	passord: Kanye
 Tekniker:		Brukernavn: Eminem	passord: RapGod123
 Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
+Manager:		Brukernavn: Man,	passord: qwerty123
+PR Ansvarlig		Brukernavn: Nas		passord: qwerty123
 ```
 ## Nettsider
 Tentativ og UFULLSTENDIG oversikt over nettsider.
@@ -72,4 +74,5 @@ Tentativ og UFULLSTENDIG oversikt over nettsider.
 * View Tech Needs: to view tech needs for a band
 * View Tech Crew: to view all tech crew for all bookings/concerts on all scenes at all times
 * Send Booking Offer: to send a created booking offer to band after(?) accepted
+* Manager Register Songs: to register new songs
 ```

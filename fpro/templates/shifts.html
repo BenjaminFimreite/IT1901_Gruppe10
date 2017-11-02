@@ -80,6 +80,15 @@
                 <td>{{booking}}</td>
                 <!--Henter ut spesifike krav til bookingen-->
                 <td>{{booking.technicalRequirements}}</td>
+								<td class="table-success">
+			            <form action="send_email" method="post">
+			              <button type="button" name="button" id="accept" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=accepted'">Attended</button>
+			            </form>
+			          </td>
+			          <td class="table-danger">
+			            <button type="button" name="button" id="decline" onclick="window.location.href = '/shifts?booking={{booking.id}}&value=declined'">Not Attended</button>
+			          </td>
+
             </tr>
             {% endfor %}
         </tbody>

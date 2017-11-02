@@ -108,13 +108,26 @@ def shifts(request):
 
     if request.method == 'POST':
         form = AddShiftForm(request.POST)
-    # if form.is_valid():
-    # break
+    elif request.method == 'GET' and (request.GET.get("value", "") == "accepted" or  request.GET.get("value", "") == "declined"):
+        if request.GET.get("value", "") == "accepted" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
+            booking = Booking.objects.get(id=request.GET.get("booking", ""))
+            booking.addTechAtt(user=request.user.id)
+            booking.save()
+        elif request.GET.get("value", "") == "declined" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
+            booking = Booking.objects.get(id=request.GET.get("booking", ""))
+            booking.addTechUnatt(user=request.user.id)
+            booking.save()
+        elif request.GET.get("value", "") == "declined" or request.GET.get("value", "") == "accepted":
+            return HttpResponseRedirect("/bookings/pending_bookings")
+        form = AddShiftForm()
+        return HttpResponseRedirect("/shifts")
+
+
     else:
         form = AddShiftForm()
 
     for booking in bookings:
-        if user in booking.technicians.all():
+        if user in booking.technicians.all() and user.id not in booking.getTechAtt() and user.id not in booking.getTechUnatt():
             user_bookings += [booking]
 
     print(user_bookings)

@@ -20,13 +20,13 @@
             {% elif user|can:'view_my_shifts' %}
                 <a href="{% url 'shifts' %}">My shifts</a><br>
             {% endif %}
-            {% if user|can:'view_concerts' %}
+            {% if user|can:'view_concerts' or user|can:'can_serve_food'%}
                 <a href="{% url 'overview' %}">Overview</a><br>
             {% endif %}
             {% if user|can:'view_bookings' %}
                 <a href="{% url 'bookings' %}">Bookings</a><br>
             {% endif %}
-            {% if user|can:'view_bookings' %}
+            {% if user|can:'accept_booking' %}
                 <a href="{% url 'pending_bookings' %}">Pending bookings</a><br>
             {% endif %}
             {% if user|can:'search_band' %}
@@ -35,7 +35,11 @@
             {% if user|can:'send_techneeds' %}
                 <a href="{% url 'send_techneeds' %}">Send technical requirements</a><br>
             {% endif %}
-        
+						{% if user|can:'register_songs' %}
+								<a href="{% url 'Songs' %}">Manager Register Songs</a><br>
+						{% endif %}
+
+
         </div>
     </div>
 </div>

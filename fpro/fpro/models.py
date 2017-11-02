@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+import json
 
 # Create your models here.
 
@@ -44,6 +45,29 @@ class Booking(models.Model):
     review = models.CharField(max_length=500, blank=True, default="")
     Songs = models.CharField(max_length=1000, blank=True, default="")
     pressLink = models.CharField(max_length=1000, blank=True, default="")
+
+    techAtt = models.CharField(max_length=1000, blank=True, default="[]")
+    techUnatt= models.CharField(max_length=1000, blank=True, default="[]")
+
+    def getTechAtt(self):
+        ta = json.loads(self.techAtt)
+        return ta
+
+    def getTechUnatt(self):
+        tua = json.loads(self.techUnatt)
+        return tua
+
+    def addTechAtt(self, user_id):
+        ta = json.loads(self.techAtt)
+        if user_id not in ta:
+            ta.append(user_id)
+        self.techAtt = json.dumps(ta)
+
+    def addTechUnatt(self, user_id):
+        tua = json.loads(self.techUnatt)
+        if user_id not in tua:
+            tua.append(user_id)
+        self.techUnatt = json.dumps(tua)
 
     def totalCostResult(self):
         return self.ticketPrice * self.ticketsSold - self.bandPrice - self.otherCosts

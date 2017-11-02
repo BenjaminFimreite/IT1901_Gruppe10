@@ -17,21 +17,25 @@
 </ol>
 <div class="container-fluid">
 <div id="concert_overview">
-    {% if user|can:'view_concerts' %}
+    {% if user|can:'view_concerts' or user|can:'can_serve_food' %}
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
+				{% if user|can:'view_concerts' or user|can:'can_serve_food' %}
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home" role="tab">Coming concerts</a></li>
+				{% endif %}
+				{% if user|can:'view_concerts'%}
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#archive" role="tab">Archive</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#genre" role="tab">Archive by Genre</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#searchBand" role="tab">Search Band</a></li>
 				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#festival" role="tab">Festival overview</a></li>
+				{% endif %}
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content">
 				<!-- Coming concerts -->
-        <div class="tab-pane active" id="home" role="tabpanel">
+        <div class="tab-pane active" id="home" role="tabpanel" style="width:120%;">
           <h2 class="overskrift">Concerts</h2>
 
             <div id="tabell">
@@ -41,6 +45,9 @@
                     <th>Band</th>
                     <th>Scene</th>
                     <th>Technicians</th>
+										<th>Tech Contact</th>
+										<th>Genre</th>
+										<th>Expected Visitors</th>
 										<th>Details</th>
                 </thead>
 
@@ -54,10 +61,17 @@
                         	<th>{{b.scene}}</th>
                         	<th>
 														{% for t in b.technicians.all %}
-														{% if forloop.counter0 == 0%} | {% endif %}
+															{% if forloop.counter0 == 0%} | {% endif %}
 															{{t}} |
 														{% endfor %}
 													</th>
+													<th>
+														{% for t in b.technicians.all %}
+															{% if forloop.counter0 == 0%} {{t}} {% endif %}
+														{% endfor %}
+													</th>
+													<th>{{b.band.genre}}</th>
+													<th>{{b.ticketsSold}}</th>
 													<th><button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See details</button></th>
                       	</tr>
                   		{% endif %}
