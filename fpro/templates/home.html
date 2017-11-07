@@ -15,35 +15,35 @@
             {% if user|can:'send_bookingoffer' %}
                 <a href="{% url 'create_booking' %}">Create booking</a><br>
             {% endif %}
-            
+
             {% if user|can:'view_edit_all_shifts' %}
                 <a href="{% url 'shifts' %}">Manage shifts</a><br>
             {% elif user|can:'view_my_shifts' %}
                 <a href="{% url 'shifts' %}">My shifts</a><br>
             {% endif %}
-            
+
             {% if user|can:'view_concerts' or user|can:'can_serve_food'%}
                 <a href="{% url 'overview' %}">Overview</a><br>
             {% endif %}
-            
+
             {% if user|can:'view_bookings' %}
                 <a href="{% url 'bookings' %}">Bookings</a><br>
             {% endif %}
-            
+
             {% if user|can:'accept_booking' %}
                 <a href="{% url 'pending_bookings' %}">Pending bookings</a><br>
             {% endif %}
-            
+
             {% if user|can:'search_band' %}
                 <a href="{% url 'bands' %}">Bands</a><br>
             {% endif %}
-            
+
             {% if user|can:'send_techneeds' %}
                 <a href="{% url 'send_techneeds' %}">Send technical requirements</a><br>
             {% endif %}
-            
+
             {% if user|can:'register_songs' %}
-                <a href="{% url 'Songs' %}">Manager Register Songs</a><br>
+                <a href="{% url 'Songs' %}">Manager register songs</a><br>
             {% endif %}
 
         </div>

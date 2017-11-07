@@ -51,8 +51,8 @@ def create_booking(request):
     return HttpResponse(template.render(context, request))
 
 
-def create_booking2(request):
-    template = loader.get_template('create_booking2.html')
+def create_booking(request):
+    template = loader.get_template('create_booking.html')
 
     bookings = Booking.objects.all()
     bands = Band.objects.values_list('bandName', flat=True)
@@ -341,7 +341,7 @@ def booking_sent(request):
 
 def send_songs(request):
     bookings = Booking.objects.all()
-    template = loader.get_template("Songs.html")
+    template = loader.get_template("songs.html")
 
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
