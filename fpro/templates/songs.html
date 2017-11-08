@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Send list of songs{% endblock %}
+
+{% block content %}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Songs</li>
+</ol>
+
+{% load permission_tags %}
+
+{% if user|can:'register_songs' %}
+<h4 style="margin-left: 25px">Here you can send a list of songs to be played and songs to rehearse</h4>
+<div id="boksrundtform">
+    {% load permission_tags %}
+
+    <form id="send_techneeds_form" method="post">
+        {% csrf_token %}
+        <br>
+
+        <!-- Genererer en form -->
+        {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+        <div class="form-group" style="margin-left: 25px; margin-right: 25px">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:'form-control' }}
+            {% for error in field.errors %}
+            <span class="help-block">{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <input style="margin-left: 25px" class="submitbutton" type="submit" value="Submit" />
+
+    </form>
+
+</div>
+
+{% endif %}
+{% endblock %}
