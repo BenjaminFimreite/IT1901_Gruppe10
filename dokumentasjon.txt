@@ -1,2 +1,15 @@
 fpro: modeller for kommunikasjon med databsen
 templates: HTML filer for siden
+
+Roller:
+superuser		
+Arrangør       	
+Tekniker 			
+Tekniker	
+Bookingsjef:    	 	
+Booking Ansvarlig 		
+Manager		
+PR Ansvarlig		
+Servering Ansvarlig	
+
+
