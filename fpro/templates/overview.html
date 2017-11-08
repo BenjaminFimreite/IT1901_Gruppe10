@@ -51,8 +51,7 @@
                             <th>Tech Contact</th>
                             <th>Genre</th>
                             <th>Expected Visitors</th>
-                            <th>Calculated Cost of Goods</th
-                            <th>Tech Status</th>
+                            <th>Calculated Cost of Goods</th>
                             <th>Details</th>
                         </thead>
 
@@ -78,7 +77,7 @@
                                 <th>{{b.band.genre}}</th>
                                 <th>{{b.ticketsSold}}</th>
                                 <th>{% widthratio b.ticketsSold 1 30 %}</th>
-                                <th>{% widthratio b.ticketsSold 1 30 %}</th>
+
                                 <th><button type="button" name="button" onclick="window.location.href = '/bookings/booking/{{b.id}}'">See details</button></th>
                             </tr>
                             {% endif %}
