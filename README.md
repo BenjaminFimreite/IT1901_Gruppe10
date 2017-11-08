@@ -31,7 +31,7 @@ Legge til permission på bruker i 'shell':
 Endre DB på nettsiden: 127.0.0.1:8000/admin	<br />
 
 ## GIT
-Git er like kronglete, her er ofte brukte kommandoer.
+Git kommandoer:
 ```
 // Først... la oss gjøre våre egne, lokale endringer klare... vi sier at git skal vite om disse
 git add .	
@@ -56,24 +56,23 @@ git checkout branchName		// Flytter det til 'branchName'
 ```
 Superuser:		Brukernavn: admin, 	passord: qwerty123	
 Arrangør:       	Brukernavn: Rihanna, 	passord: Umbrella  	
-Tekniker: 		Brukernavn: Kim K, 	passord: Kanye	
+Tekniker: 		Brukernavn: KimK, 	passord: Kanye	
 Tekniker:		Brukernavn: Eminem	passord: RapGod123
-Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems  	
+Bookingsjef:    	Brukernavn: JayZ, 	passord: 99problems  	
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 Manager:		Brukernavn: Man,	passord: qwerty123
 PR Ansvarlig		Brukernavn: Nas		passord: qwerty123
 Servering Ansvarlig:	Brukernavn: DinerDash	passord: qwerty123
 ```
 ## Nettsider
-Tentativ og UFULLSTENDIG oversikt over nettsider.
+Fullstendig oversikt over nettsider.
 ```
 * Create Booking: to creat booking (added to DB)
-* View Dates and Bookings: to view calender view with busy and available dates/scenes and concerts on scenes
-* View Bookings: to accept/decline offer (change in DB)
-* View Shifts: for technicians to view when they are to work
-* Send Tech Needs: for manager to send technical needs
-* View Tech Needs: to view tech needs for a band
-* View Tech Crew: to view all tech crew for all bookings/concerts on all scenes at all times
-* Send Booking Offer: to send a created booking offer to band after(?) accepted
-* Manager Register Songs: to register new songs
+* Manage shifts/My shifts: view all registered shifts or view shifts you are registered at
+* Bookings: view all bookings and click button to view more information (including pr information) about the specific booking
+* Overview: full overview of coming concerts, archive, archive by genre, and scene overview
+* Pending Bookings: to accept/decline booking offer
+* Bands: view all registered bands and click button to view more information about the spcific band
+* Send technical requirements: for manager to send technical requirements
+* Manager register songs: to register new songs
 ```
