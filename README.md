@@ -62,6 +62,7 @@ Bookingsjef:    	Brukernavn: Jay Z, 	passord: 99problems
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 Manager:		Brukernavn: Man,	passord: qwerty123
 PR Ansvarlig		Brukernavn: Nas		passord: qwerty123
+Servering Ansvarlig:	Brukernavn: DinerDash	passord: qwerty123
 ```
 ## Nettsider
 Tentativ og UFULLSTENDIG oversikt over nettsider.
