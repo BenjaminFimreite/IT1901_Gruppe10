@@ -22,7 +22,7 @@
                 <a href="{% url 'shifts' %}">My shifts</a><br>
             {% endif %}
 
-            {% if user|can:'view_concerts' or user|can:'can_serve_food'%}
+            {% if user|can:'view_concerts' or user|can:'can_serve_food' or user|can:'tech_needs' %}
                 <a href="{% url 'overview' %}">Overview</a><br>
             {% endif %}
 

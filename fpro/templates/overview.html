@@ -17,24 +17,23 @@
 </ol>
 <div class="container-fluid">
     <div id="concert_overview">
-        {% if user|can:'view_concerts' or user|can:'can_serve_food' %}
+        {% if user|can:'view_concerts' or user|can:'can_serve_food' or user|can:'tech_needs' %}
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             {% if user|can:'view_concerts' or user|can:'can_serve_food' %}
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home" role="tab">Coming concerts</a></li>
             {% endif %}
-            {% if user|can:'view_concerts' %}
+            {% if user|can:'view_concerts' or user|can:'tech_needs'%}
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#archive" role="tab">Archive</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#genre" role="tab">Archive by Genre</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#searchBand" role="tab">Search Band</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#festival" role="tab">Festival overview</a></li>
-            {% if user|can:'view_scene_info' %}
+            {% if user|can:'view_scene_info' or user|can:'tech_needs'%}
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scene" role="tab">Scene overview</a></li>
             {% endif %}
             {% endif %}
         </ul>
-
         <!-- Tab panes -->
         <div class="tab-content">
             <!-- Coming concerts -->
@@ -228,6 +227,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>Band</th>
                                     <th>Date</th>
                                     <th>Ticketsales</th>
                                     <th>Pending technical requirements</th>
@@ -240,6 +240,7 @@
                                 {% for b in bookings %}
                                 {% if b.scene == scene %}
                                 <tr>
+                                    <td>{{b.band.bandName}}</td>
                                     <td>{{b.date}}</td>
                                     <td>{{b.ticketsSold}}</td>
                                     <td>{{b.technicalRequirements}}</td>

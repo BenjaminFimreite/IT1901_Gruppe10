@@ -21,9 +21,10 @@ class Genre(models.Model):
 
 class Band(models.Model):
     bandName = models.CharField(max_length=100, default="")
-    StreamCount = models.IntegerField(default=0)
-    Visits = models.IntegerField(default=0)
+    streamCount = models.IntegerField(default=0)
+    visits = models.IntegerField(default=0)
     genre = models.ForeignKey(Genre, null=True, blank=True)
+    albumSales = models.IntegerField(default=0)
 
     def __str__(self):
         return self.bandName
