@@ -29,7 +29,7 @@ def send_email(booking):
     date = booking.date
     band = booking.band
     scene = booking.scene
-    msg = "Prisforslag: " + str(price) + "\n" + "Dato:" + str(date) + "\n" + str(band) + "\n" + str(scene)
+    msg = "Prisforslag: " + str(price) + "\n" + "Dato:" + str(date) + "\n" + str(band) + "\n" + str(scene) + "\n Du kan bekrefte tilbudet paa localhost:8000/bookings/pending_bookings"
     sender = 'fpro.no'
     subject = 'Bookingtilbud'
     if price and manager:
@@ -198,7 +198,15 @@ def pending_bookings(request):
         booking = Booking.objects.get(id=request.GET.get("booking", ""))
         booking.delete()
         return HttpResponseRedirect("/bookings/pending_bookings")
-    elif request.GET.get("value", "") == "declined" or request.GET.get("value", "") == "accepted":
+    # Booking confirmed
+    elif request.GET.get("value", "") == "confirmed" and Booking.objects.filter(
+            id=request.GET.get("booking", "")).count() > 0:
+        booking = Booking.objects.get(id=request.GET.get("booking", ""))
+        booking.approvedManager = True
+        booking.save()
+        return HttpResponseRedirect("/bookings/pending_bookings")
+
+    elif request.GET.get("value", "") == "declined" or request.GET.get("value", "") == "accepted" or request.GET.get("value", "") == "confirmed":
         return HttpResponseRedirect("/bookings/pending_bookings")
 
     pending_bookings_array = []
