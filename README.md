@@ -61,8 +61,8 @@ Tekniker:		Brukernavn: Eminem	passord: RapGod123
 Bookingsjef:    	Brukernavn: JayZ, 	passord: 99problems  	
 Booking Ansvarlig :	Brukernavn: Drake, 	passord: Hotline Bling	
 Manager:		Brukernavn: Man,	passord: qwerty123
-PR Ansvarlig		Brukernavn: Nas		passord: qwerty123
-Servering Ansvarlig:	Brukernavn: DinerDash	passord: qwerty123
+PR Ansvarlig		Brukernavn: Nas,	passord: qwerty123
+Servering Ansvarlig:	Brukernavn: DinerDash,	passord: qwerty123
 ```
 ## Nettsider
 Fullstendig oversikt over nettsider.
