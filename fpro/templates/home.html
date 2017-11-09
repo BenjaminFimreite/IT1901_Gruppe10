@@ -30,7 +30,7 @@
                 <a href="{% url 'bookings' %}">Bookings</a><br>
             {% endif %}
 
-            {% if user|can:'accept_booking' %}
+            {% if user|can:'accept_booking' or user|can:'confirm_booking' %}
                 <a href="{% url 'pending_bookings' %}">Pending bookings</a><br>
             {% endif %}
 
