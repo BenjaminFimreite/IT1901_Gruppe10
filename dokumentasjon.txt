@@ -6,7 +6,7 @@ superuser
 Arrangør       	
 Tekniker 			
 Tekniker	
-Bookingsjef:    	 	
+Bookingsjef    	 	
 Booking Ansvarlig 		
 Manager		
 PR Ansvarlig		
@@ -14,7 +14,7 @@ Servering Ansvarlig
 
 
 KJØRE Django Server:	
-	python3 manage.py runserver	// Siden nåes via 127.0.0.1:8000 	
+	python3 manage.py runserver	// Siden nås via 127.0.0.1:8000 	
 	
 NY App:	
 	python3 manage.py startapp ‘appnavn’
@@ -23,7 +23,7 @@ Migrate modeller inn i database (SQLite):
 	python3 manage.py makemigrations
 	python3 manage.py migrate
 ***merge
-	python3 manage.pu makemigrations --merge
+	python3 manage.py makemigrations --merge
 	
 Shell:
 	python3 manage.py shell		// her kan du gjøre mye rart
