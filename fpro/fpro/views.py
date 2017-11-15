@@ -109,11 +109,11 @@ def shifts(request):
     elif request.method == 'GET' and (request.GET.get("value", "") == "accepted" or  request.GET.get("value", "") == "declined"):
         if request.GET.get("value", "") == "accepted" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
             booking = Booking.objects.get(id=request.GET.get("booking", ""))
-            booking.addTechAtt(user=request.user.id)
+            booking.addTechAtt(user_id=request.user.id)
             booking.save()
         elif request.GET.get("value", "") == "declined" and Booking.objects.filter(id=request.GET.get("booking", "")).count() > 0:
             booking = Booking.objects.get(id=request.GET.get("booking", ""))
-            booking.addTechUnatt(user=request.user.id)
+            booking.addTechUnatt(user_id=request.user.id)
             booking.save()
         elif request.GET.get("value", "") == "declined" or request.GET.get("value", "") == "accepted":
             return HttpResponseRedirect("/bookings/pending_bookings")
@@ -363,9 +363,11 @@ def send_songs(request):
             if booking.Songs is not None:
                 booking.Songs += '\n'
             booking.Songs += form.cleaned_data["songs"]
+            print(booking.Songs)
             booking.save()
             # redirect to a new URL:
-            return HttpResponse("Songs successfully sent")
+            return HttpResponseRedirect("/")
+        # return HttpResponse("Songs successfully sent")
             # if a GET (or any other method) we'll create a blank form
     else:
         form = SendSongsForm()
